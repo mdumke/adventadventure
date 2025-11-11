@@ -7,3 +7,6 @@ tmp/
 .parcel-cache/
 .vscode/settings.json
 
+
+*.drawio.bkp
+*.drawio.dtmp
