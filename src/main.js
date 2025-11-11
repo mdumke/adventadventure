@@ -1,6 +1,5 @@
-import { PanContainer } from './pan-container.js'
+import './components/pan-container/pan-container.js'
 
-const $app = document.querySelector('#app')
-const $panContainer = document.querySelector('#pan-container')
-
-new PanContainer($panContainer, $app)
+document.getElementById('door-04').addEventListener('click', () => {
+  console.log('Door 04 clicked')
+})

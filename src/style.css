@@ -9,53 +9,41 @@ html {
   font-family: system-ui;
 }
 
-.no-scrollbar {
-  scrollbar-width: none; /* Firefox */
-  -ms-overflow-style: none; /* IE and Edge */
-}
-
-/* Chrome, Safari and Opera */
-.no-scrollbar::-webkit-scrollbar {
-  display: none;
-}
-
 .app {
   width: 100%;
   height: 100vh;
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: #333;
   cursor: default;
 }
 
-.pan-container {
-  width: 100%;
-  height: 100%;
-  overflow: scroll;
-  cursor: grab;
-  user-select: none;
-  -webkit-user-drag: none;
-}
-
-.pan-wrapper:active,
-.pan-container:active {
-  cursor: grabbing;
-}
-
-.background-img {
-  display: block;
-  width: 200%;
-  height: auto;
-  object-fit: cover;
-  user-select: none;
-  pointer-events: none;
-  -webkit-user-drag: none;
+pan-container {
+  width: 100vw;
+  height: 100vh;
 }
 
 @media (min-width: 1024px) {
-  .pan-container {
-    height: 600px;
-    width: 1024px;
+  pan-container {
+    height: calc(1 * 600px);
+    width: calc(1 * 1024px);
   }
+}
+
+.pan-content {
+  position: relative;
+  background: url('../assets/images/platte.webp');
+  width: 1500px;
+  height: 2265px;
+}
+
+.door {
+  position: absolute;
+  cursor: pointer;
+  -webkit-user-drag: none;
+}
+
+.door-04 {
+  left: 572px;
+  top: 104px;
 }
