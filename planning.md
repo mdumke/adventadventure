@@ -3,8 +3,10 @@
 ## features
 
 - [x] pan image
-- [ ] click on doors to open
+- [x] open a single door
+- [x] create title state
 - [ ] content loading strategy
+- [ ] open multiple doors
 - [ ] door creaks as it moves over
 - [ ] loudness / speaker test
 - [ ] store media in local storage

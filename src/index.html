@@ -9,16 +9,27 @@
 </head>
 
 <body>
-  <div id="app" class="app">
-    <pan-container>
-      <div class="pan-content">
-        <div data-interactive id="door-04-content" class="door-content door-04-content"></div>
-        <div data-interactive id="door-04" class="door door-04">
-          <div class="door-text">4</div>
+  <div id="app" class="app"></div>
+
+  <template id="title-screen">
+    <div class="screen title-screen">
+      <h1>Advent 2025</h1>
+      <button id="start-button" class="start-button">Start</button>
+    </div>
+  </template>
+
+  <template id="calendar-screen">
+    <div class="screen calendar-screen">
+      <pan-container class="pan-container">
+        <div class="pan-content">
+          <div data-interactive id="door-04-content" class="door-content door-04-content"></div>
+          <div data-interactive id="door-04" class="door door-04">
+            <div class="door-text">4</div>
+          </div>
         </div>
-      </div>
-    </pan-container>
-  </div>
+      </pan-container>
+    </div>
+  </template>
 
   <script type="module" src="main.js"></script>
 </body>
