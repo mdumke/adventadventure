@@ -1,4 +1,4 @@
-import { assetManager } from '../asset-manager.js'
+import { assetLoader } from '../asset-loader.js'
 import { ui } from '../ui'
 import { contextManager } from './context-manager'
 import { CalendarContext } from './calendar-context.js'
@@ -11,7 +11,7 @@ export class TitleContext {
 
   enter () {
     ui.renderTemplate('#title-screen')
-    assetManager.loadCalendarAssets(this.onLoadingProgress)
+    assetLoader.preloadCalendarAssets(this.onLoadingProgress)
     this.$startBtn = ui.selectElement('#start-button')
     this.$progressBar = ui.selectElement('#progress-bar')
     this.$startBtn.addEventListener('click', this.onStartClick)
