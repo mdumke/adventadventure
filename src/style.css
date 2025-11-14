@@ -92,22 +92,20 @@ html {
 .calendar {
   position: relative;
 
-  .door {
-    position: absolute;
-    cursor: pointer;
-    -webkit-user-drag: none;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background-repeat: no-repeat;
-    background-position: center;
-    transition: left 1.2s ease-out;
+  calendar-door::part(label-container) {
+    background-color: #fff;
+    color: #333;
   }
 
-  .door-text {
-    color: #333;
-    font-size: 32px;
-    font-weight: bold;
+  calendar-door::part(door-content) {
+    box-shadow: inset -3px 2px 6px rgba(0, 0, 0, 0.3);
+    border-radius: 14px;
+    background-size: 100% 100%;
+    transition: background-size 0.9s ease-out;
+
+    &:hover {
+      background-size: 106% 106%;
+    }
   }
 
   .door-content {
@@ -116,7 +114,6 @@ html {
     -webkit-user-drag: none;
     box-shadow: inset -3px 2px 6px rgba(0, 0, 0, 0.3);
     border-radius: 14px;
-    /* background-image: url('../assets/images/record-04-vertical.webp'); */
     background-repeat: no-repeat;
     background-position: center;
     background-size: 100% 100%;

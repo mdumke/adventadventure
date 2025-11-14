@@ -1,3 +1,4 @@
+import './components/calendar-door/calendar-door.js'
 import './components/pan-container/pan-container.js'
 import './components/progress-bar/progress-bar.js'
 

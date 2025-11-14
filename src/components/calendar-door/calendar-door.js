@@ -1,0 +1,116 @@
+/*
+ * Web component that prepares a calendar door element, incluing data
+ * loading, opening animation, and content display.
+ *
+ */
+
+import { template } from './template.js'
+
+/**
+ * @element calendar-door
+ * @summary A calendar door that can be opened to reveal content.
+ *
+ * @attr {string} open - When present, triggers the door opening animation.
+ * @part label-container - The container element for the door label.
+ * @part door-content - The content area revealed when the door is opened.
+ */
+class CalendarDoor extends HTMLElement {
+  /**
+   * @property {Object} config - Configuration object for the door, example:
+   * {
+   *   id: 'door-01',
+   *   label: '1',
+   *   position: { x: 100, y: 200 },
+   *   size: { width: 91, height: 131 },
+   *   filename: 'doors/door-01.png',
+   *   packageId: 'package-01'
+   * }
+   */
+  static get observedAttributes () {
+    return ['open']
+  }
+
+  set config (obj) {
+    this._config = obj
+    this.update()
+  }
+
+  get config () {
+    if (!this._config) {
+      throw new Error('[CalendarDoor] config object not set')
+    }
+    return this._config
+  }
+
+  /**
+   * @property {Object} packageConfig - Configuration object for the package
+   * associated with this door. Example:
+   * {
+   *   filename: 'packages/record-01.webp',
+   * }
+   */
+  set packageConfig (pkg) {
+    this._packageConfig = pkg
+    this.updatePackage()
+  }
+
+  get packageConfig () {
+    if (!this._packageConfig) {
+      throw new Error('[CalendarDoor] packageConfig object not set')
+    }
+    return this._packageConfig
+  }
+
+  constructor () {
+    super()
+    this.attachShadow({ mode: 'open' })
+    this.shadowRoot.appendChild(template.content.cloneNode(true))
+    this.$doorFrame = this.shadowRoot.querySelector('#door-frame')
+    this.$doorLabel = this.shadowRoot.querySelector('#label-text')
+    this.$doorContent = this.shadowRoot.querySelector('#door-content')
+  }
+
+  connectedCallback () {
+    this.dataset.interactive = ''
+    this.dataset.door = ''
+    this.update()
+  }
+
+  attributeChangedCallback (name, oldValue, newValue) {
+    if (name === 'open' && newValue !== null) {
+      return this.openDoor()
+    }
+
+    this.update()
+  }
+
+  update () {
+    this.id = this.config.id
+
+    const { top, left } = this.config.position || {}
+    const { width, height } = this.config.size || {}
+    this.style.width = `${width}px`
+    this.style.height = `${height}px`
+    this.style.top = `${top}px`
+    this.style.left = `${left}px`
+
+    const imgSrc = this._config.filename
+    this.$doorFrame.style.backgroundImage = `url('images/${imgSrc}')`
+    this.$doorLabel.textContent = this.config.label
+  }
+
+  updatePackage () {
+    const imgSrc = this.packageConfig.filename
+    this.$doorContent.style.backgroundImage = `url('images/${imgSrc}')`
+  }
+
+  openDoor () {
+    const doorFrameWidth = this.$doorFrame.offsetWidth
+    this.$doorFrame.style.transform = `translateX(-${doorFrameWidth - 10}px)`
+    this.$doorFrame.classList.add('open')
+    this.removeAttribute('data-door')
+    this.dataset.content = ''
+  }
+}
+
+customElements.define('calendar-door', CalendarDoor)

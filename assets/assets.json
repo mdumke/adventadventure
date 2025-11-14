@@ -10,8 +10,8 @@
       "label": "1",
       "filename": "doors/door-01-91-131.png",
       "position": {
-        "x": 60,
-        "y": 60
+        "left": 60,
+        "top": 60
       },
       "packageId": "monkey-01"
     },
@@ -20,8 +20,8 @@
       "label": "2",
       "filename": "doors/door-02-91-131.png",
       "position": {
-        "x": 50,
-        "y": 710
+        "left": 50,
+        "top": 710
       },
       "packageId": "derya-01"
     },
@@ -30,8 +30,8 @@
       "label": "3",
       "filename": "doors/door-03-91-131.png",
       "position": {
-        "x": 350,
-        "y": 430
+        "left": 350,
+        "top": 430
       },
       "packageId": "monkey-02"
     },
@@ -40,8 +40,8 @@
       "label": "4",
       "filename": "doors/door-04-91-131.png",
       "position": {
-        "x": 820,
-        "y": 540
+        "left": 820,
+        "top": 540
       },
       "packageId": "monkey-03"
     },
@@ -50,8 +50,8 @@
       "label": "5",
       "filename": "doors/door-05-91-131.png",
       "position": {
-        "x": 950,
-        "y": 150
+        "left": 950,
+        "top": 150
       },
       "packageId": "derya-02"
     },
@@ -60,8 +60,8 @@
       "label": "6",
       "filename": "doors/door-06-91-131.png",
       "position": {
-        "x": 1310,
-        "y": 30
+        "left": 1310,
+        "top": 30
       },
       "packageId": "monkey-04"
     },
@@ -70,8 +70,8 @@
       "label": "7",
       "filename": "doors/door-07-91-131.png",
       "position": {
-        "x": 1310,
-        "y": 710
+        "left": 1310,
+        "top": 710
       },
       "packageId": "derya-03"
     }

@@ -54,4 +54,5 @@
 ## decisions
 
 - [x] One canonical-size image, pixel-perfect interactions, no retina support
+- [x] Once a door is open, it stays open
 - [ ] does a speaker test make sense?

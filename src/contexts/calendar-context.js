@@ -1,4 +1,4 @@
-import { assetLoader, STAGE_ACTIVE_PACKAGES } from '../asset-loader.js'
+import { assetLoader, STAGE_PACKAGE_THUMBNAILS } from '../asset-loader.js'
 import { ui } from '../ui.js'
 
 export class CalendarContext {
@@ -25,7 +25,7 @@ export class CalendarContext {
   onCalendarClick = event => {
     const $door = event.target.closest('[data-door]')
     if ($door) {
-      return ui.openDoor($door)
+      return $door.setAttribute('open', 'true')
     }
 
     const $content = event.target.closest('[data-content]')
@@ -35,16 +35,24 @@ export class CalendarContext {
   }
 
   handlePackages () {
-    assetLoader.activePackagesReady
-      ? ui.insertActivePackages()
+    assetLoader.packageThumbnailsReady
+      ? this.configurePackages()
       : assetLoader.registerProgressCallback(this.key, this.onLoadingProgress)
   }
 
+  configurePackages () {
+    assetLoader.assetMapping.doors.forEach(door => {
+      const $door = ui.selectElement(`#${door.id}`)
+      const pkg = assetLoader.assetMapping.packages[door.packageId]
+      $door.packageConfig = pkg
+    })
+  }
+
   onLoadingProgress = (stage, _, done) => {
-    if (stage !== STAGE_ACTIVE_PACKAGES) return
+    if (stage !== STAGE_PACKAGE_THUMBNAILS) return
     if (!done) return
 
     assetLoader.unregisterProgressCallback(this.key)
-    ui.insertActivePackages()
+    this.configurePackages()
   }
 }

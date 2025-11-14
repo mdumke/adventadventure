@@ -3,8 +3,7 @@ const IMAGE_BASE_PATH = 'images'
 
 export const STAGE_INITIAL = 'stage-initial'
 export const STAGE_CALENDAR_ASSETS = 'stage-calendar-assets'
-export const STAGE_ACTIVE_PACKAGES = 'stage-active-packages'
-export const STAGE_FUTURE_PACKAGES = 'stage-future-packages'
+export const STAGE_PACKAGE_THUMBNAILS = 'stage-package-thumbnails'
 export const STAGE_COMPLETE = 'stage-complete'
 
 class AssetLoader {
@@ -22,21 +21,19 @@ class AssetLoader {
   }
 
   get calendarAssetsReady () {
-    return [
-      STAGE_ACTIVE_PACKAGES,
-      STAGE_FUTURE_PACKAGES,
-      STAGE_COMPLETE
-    ].includes(this.loadingStage)
+    return [STAGE_PACKAGE_THUMBNAILS, STAGE_COMPLETE].includes(
+      this.loadingStage
+    )
   }
 
-  get activePackagesReady () {
-    return [STAGE_FUTURE_PACKAGES, STAGE_COMPLETE].includes(this.loadingStage)
+  get packageThumbnailsReady () {
+    return this.loadingStage === STAGE_COMPLETE
   }
 
   async run () {
     await this.loadAssetMapping()
     await this.preloadCalendarAssets()
-    await this.preloadActivePackages()
+    await this.preloadPackageThumbnails()
     this.loadingStage = STAGE_COMPLETE
   }
 
@@ -70,8 +67,8 @@ class AssetLoader {
     })
   }
 
-  async preloadActivePackages () {
-    this.loadingStage = STAGE_ACTIVE_PACKAGES
+  async preloadPackageThumbnails () {
+    this.loadingStage = STAGE_PACKAGE_THUMBNAILS
 
     const imageFilenames = this._assetMapping.doors.map(
       ({ packageId }) => this._assetMapping.packages[packageId]?.filename
@@ -105,7 +102,8 @@ class AssetLoader {
     return new Promise((resolve, reject) => {
       const img = new Image()
       img.onload = () => resolve(img)
-      img.onerror = () => reject(new Error(`Failed to load image: ${src}`))
+      img.onerror = () =>
+        reject(new Error(`[AssetLoader] failed to load image: ${src}`))
       img.src = src
     })
   }
