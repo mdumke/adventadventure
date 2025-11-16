@@ -6,14 +6,16 @@
 - [x] open a single door
 - [x] create title state
 - [x] open multiple doors
+- [x] support yt videos
 - [ ] implement content loading strategy
+- [ ] play-btn on the door content
+- [ ] build the background completely before lifting
+- [ ] remember which doors are open
 - [ ] snow animations
 - [ ] load different images depending on resolution
 - [ ] estimate network connection speed
-- [ ] support yt videos
 - [ ] restrict door access
 - [ ] HTTP 2
-- [ ] play media items
 - [ ] door creaks as it moves over
 - [ ] loudness / speaker test
 - [ ] store media in local storage

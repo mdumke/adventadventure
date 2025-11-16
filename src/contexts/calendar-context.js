@@ -9,8 +9,8 @@ export class CalendarContext {
     this.render()
     this.$calendar = ui.selectElement('#calendar')
     this.$calendar.addEventListener('click', this.onCalendarClick)
-    this.$calendar.addEventListener('display-image', this.onDisplayImage)
-    this.$lightbox = ui.selectElement('#media-lightbox')
+    this.$calendar.addEventListener('show-player', this.onShowPlayer)
+    this.player = ui.selectElement('#media-player')
     this.handlePackages()
   }
 
@@ -36,8 +36,8 @@ export class CalendarContext {
     }
   }
 
-  onDisplayImage = event => {
-    this.$lightbox.displayImage(event)
+  onShowPlayer = event => {
+    this.player.displayImage(event)
   }
 
   handlePackages () {
@@ -51,7 +51,6 @@ export class CalendarContext {
       const $door = ui.selectElement(`#${door.id}`)
       const pkg = assetLoader.assetMapping.packages[door.packageId]
       $door.packageConfig = pkg
-      // $door.setAttribute('preload', 'true')
     })
   }
 

@@ -4,12 +4,14 @@
  *
  */
 
-import { assetLoader } from '../../asset-loader.js'
 import { template } from './template.js'
 
 /**
  * @element calendar-door
  * @summary A calendar door that can be opened to reveal content.
+ *
+ * @fires show-player - Fired when the door content is clicked to display the player.
+ * The event detail contains an object: { src: string } with the content source URL.
  *
  * @attr {string} open - When present, triggers the door opening animation.
  * @part label-container - The container element for the door label.
@@ -48,7 +50,7 @@ class CalendarDoor extends HTMLElement {
    * associated with this door. Example:
    * {
    *   thumbnail: 'packages/record-01.webp',
-   *   filename: 'packages/record-01-full.webp',
+   *   src: 'https://example.com/xyz',
    * }
    */
   set packageConfig (pkg) {
@@ -67,11 +69,9 @@ class CalendarDoor extends HTMLElement {
     super()
     this.attachShadow({ mode: 'open' })
     this.shadowRoot.appendChild(template.content.cloneNode(true))
-    this.$doorBackdrop = this.shadowRoot.querySelector('[part="door-backdrop"]')
     this.$doorFrame = this.shadowRoot.querySelector('#door-frame')
     this.$doorLabel = this.shadowRoot.querySelector('#label-text')
     this.$doorContent = this.shadowRoot.querySelector('#door-content')
-    console.log(this.$doorBackdrop)
   }
 
   connectedCallback () {
@@ -81,20 +81,10 @@ class CalendarDoor extends HTMLElement {
   }
 
   attributeChangedCallback (name, _oldValue, newValue) {
-    if (newValue === null) {
-      return this.update()
+    if (name === 'open' && newValue !== null) {
+      return this.openDoor()
     }
-
-    switch (name) {
-      case 'open':
-        this.openDoor()
-        break
-      case 'preload':
-        this.preloadContent()
-        break
-      default:
-        this.update()
-    }
+    this.update()
   }
 
   update () {
@@ -123,21 +113,14 @@ class CalendarDoor extends HTMLElement {
     this.$doorFrame.classList.add('open')
     this.removeAttribute('data-door')
     this.dataset.content = ''
-    this.preloadContent()
-  }
-
-  preloadContent () {
-    assetLoader.preloadImage(`images/${this.packageConfig.filename}`)
   }
 
   displayContent () {
-    const src = `images/${this.packageConfig.filename}`
-
     this.dispatchEvent(
-      new CustomEvent('display-image', {
+      new CustomEvent('show-player', {
         bubbles: true,
         composed: true,
-        detail: { src }
+        detail: { src: this.packageConfig.src }
       })
     )
   }

@@ -1,4 +1,4 @@
-import * as css from 'bundle-text:./media-lightbox.css'
+import * as css from 'bundle-text:./media-player.css'
 
 export const template = document.createElement('template')
 

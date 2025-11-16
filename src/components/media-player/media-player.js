@@ -1,18 +1,18 @@
 /*
- * Web component to display a large image in a lightbox overlay.
+ * Web component to show an embedded youtube video in a lightbox overlay.
  *
  */
 
 import { template } from './template.js'
 
 /**
- * @element media-lightbox
- * @summary A lightbox component to display large images overlayed on the page.
+ * @element media-player
+ * @summary A media player lightbox for displaying images or videos.:w
  *
  * @part overlay - The overlay background element.
  * @part close-button - The button to close the lightbox.
  */
-class MediaLightbox extends HTMLElement {
+class MediaPlayer extends HTMLElement {
   constructor () {
     super()
     this.attachShadow({ mode: 'open' })
@@ -34,7 +34,15 @@ class MediaLightbox extends HTMLElement {
 
   displayImage (event) {
     const { src } = event.detail
-    this.$overlay.innerHTML = `<img src="${src}" alt="Media Content" />`
+    this.$overlay.innerHTML = `
+    <iframe
+      src="${src}&autoplay=1&rel=0"
+      frameborder="0"
+      allow="autoplay; clipboard-write; encrypted-media; picture-in-picture"
+      referrerpolicy="strict-origin-when-cross-origin"
+      allowfullscreen
+    ></iframe>
+    `
     this.classList.remove('hide')
   }
 
@@ -46,4 +54,4 @@ class MediaLightbox extends HTMLElement {
   }
 }
 
-customElements.define('media-lightbox', MediaLightbox)
+customElements.define('media-player', MediaPlayer)
