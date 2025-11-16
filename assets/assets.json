@@ -78,76 +78,100 @@
   ],
   "packages": {
     "derya-01": {
-      "filename": "packages/derya-01.webp"
+      "thumbnail": "packages/derya-01.webp",
+      "filename": "packages/derya-cover.webp"
     },
     "derya-02": {
-      "filename": "packages/derya-02.webp"
+      "thumbnail": "packages/derya-02.webp",
+      "filename": "packages/derya-cover.webp"
     },
     "derya-03": {
-      "filename": "packages/derya-03.webp"
+      "thumbnail": "packages/derya-03.webp",
+      "filename": "packages/derya-cover.webp"
     },
     "derya-04": {
-      "filename": "packages/derya-04.webp"
+      "thumbnail": "packages/derya-04.webp",
+      "filename": "packages/derya-cover.webp"
     },
     "derya-05": {
-      "filename": "packages/derya-05.webp"
+      "thumbnail": "packages/derya-05.webp",
+      "filename": "packages/derya-cover.webp"
     },
     "derya-06": {
-      "filename": "packages/derya-06.webp"
+      "thumbnail": "packages/derya-06.webp",
+      "filename": "packages/derya-cover.webp"
     },
     "derya-07": {
-      "filename": "packages/derya-07.webp"
+      "thumbnail": "packages/derya-07.webp",
+      "filename": "packages/derya-cover.webp"
     },
     "derya-08": {
-      "filename": "packages/derya-08.webp"
+      "thumbnail": "packages/derya-08.webp",
+      "filename": "packages/derya-cover.webp"
     },
     "derya-09": {
-      "filename": "packages/derya-09.webp"
+      "thumbnail": "packages/derya-09.webp",
+      "filename": "packages/derya-cover.webp"
     },
     "derya-10": {
-      "filename": "packages/derya-10.webp"
+      "thumbnail": "packages/derya-10.webp",
+      "filename": "packages/derya-cover.webp"
     },
     "derya-11": {
-      "filename": "packages/derya-11.webp"
+      "thumbnail": "packages/derya-11.webp",
+      "filename": "packages/derya-cover.webp"
     },
     "derya-12": {
-      "filename": "packages/derya-12.webp"
+      "thumbnail": "packages/derya-12.webp",
+      "filename": "packages/derya-cover.webp"
     },
     "monkey-01": {
-      "filename": "packages/monkey-01.webp"
+      "thumbnail": "packages/monkey-01.webp",
+      "filename": "packages/monkey-cover.webp"
     },
     "monkey-02": {
-      "filename": "packages/monkey-02.webp"
+      "thumbnail": "packages/monkey-02.webp",
+      "filename": "packages/monkey-cover.webp"
     },
     "monkey-03": {
-      "filename": "packages/monkey-03.webp"
+      "thumbnail": "packages/monkey-03.webp",
+      "filename": "packages/monkey-cover.webp"
     },
     "monkey-04": {
-      "filename": "packages/monkey-04.webp"
+      "thumbnail": "packages/monkey-04.webp",
+      "filename": "packages/monkey-cover.webp"
     },
     "monkey-05": {
-      "filename": "packages/monkey-05.webp"
+      "thumbnail": "packages/monkey-05.webp",
+      "filename": "packages/monkey-cover.webp"
     },
     "monkey-06": {
-      "filename": "packages/monkey-06.webp"
+      "thumbnail": "packages/monkey-06.webp",
+      "filename": "packages/monkey-cover.webp"
     },
     "monkey-07": {
-      "filename": "packages/monkey-07.webp"
+      "thumbnail": "packages/monkey-07.webp",
+      "filename": "packages/monkey-cover.webp"
     },
     "monkey-08": {
-      "filename": "packages/monkey-08.webp"
+      "thumbnail": "packages/monkey-08.webp",
+      "filename": "packages/monkey-cover.webp"
     },
     "monkey-09": {
-      "filename": "packages/monkey-09.webp"
+      "thumbnail": "packages/monkey-09.webp",
+      "filename": "packages/monkey-cover.webp"
     },
     "monkey-10": {
-      "filename": "packages/monkey-10.webp"
+      "thumbnail": "packages/monkey-10.webp",
+      "filename": "packages/monkey-cover.webp"
     },
     "monkey-11": {
-      "filename": "packages/monkey-11.webp"
+      "thumbnail": "packages/monkey-11.webp",
+      "filename": "packages/monkey-cover.webp"
     },
     "monkey-12": {
-      "filename": "packages/monkey-12.webp"
+      "thumbnail": "packages/monkey-12.webp",
+      "filename": "packages/monkey-cover.webp"
     }
   }
 }

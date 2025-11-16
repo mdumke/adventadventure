@@ -7,6 +7,7 @@
 - [x] create title state
 - [x] open multiple doors
 - [ ] implement content loading strategy
+- [ ] load different images depending on resolution
 - [ ] estimate network connection speed
 - [ ] restrict door access
 - [ ] play media items

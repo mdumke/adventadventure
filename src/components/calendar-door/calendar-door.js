@@ -27,7 +27,7 @@ class CalendarDoor extends HTMLElement {
    * }
    */
   static get observedAttributes () {
-    return ['open']
+    return ['open', 'preload']
   }
 
   set config (obj) {
@@ -46,7 +46,8 @@ class CalendarDoor extends HTMLElement {
    * @property {Object} packageConfig - Configuration object for the package
    * associated with this door. Example:
    * {
-   *   filename: 'packages/record-01.webp',
+   *   thumbnail: 'packages/record-01.webp',
+   *   filename: 'packages/record-01-full.webp',
    * }
    */
   set packageConfig (pkg) {
@@ -76,12 +77,21 @@ class CalendarDoor extends HTMLElement {
     this.update()
   }
 
-  attributeChangedCallback (name, oldValue, newValue) {
-    if (name === 'open' && newValue !== null) {
-      return this.openDoor()
+  attributeChangedCallback (name, _oldValue, newValue) {
+    if (newValue === null) {
+      return this.update()
     }
 
-    this.update()
+    switch (name) {
+      case 'open':
+        this.openDoor()
+        break
+      case 'preload':
+        this.preloadContent()
+        break
+      default:
+        this.update()
+    }
   }
 
   update () {
@@ -94,13 +104,13 @@ class CalendarDoor extends HTMLElement {
     this.style.top = `${top}px`
     this.style.left = `${left}px`
 
-    const imgSrc = this._config.filename
+    const imgSrc = this.config.filename
     this.$doorFrame.style.backgroundImage = `url('images/${imgSrc}')`
     this.$doorLabel.textContent = this.config.label
   }
 
   updatePackage () {
-    const imgSrc = this.packageConfig.filename
+    const imgSrc = this.packageConfig.thumbnail
     this.$doorContent.style.backgroundImage = `url('images/${imgSrc}')`
   }
 
@@ -110,6 +120,22 @@ class CalendarDoor extends HTMLElement {
     this.$doorFrame.classList.add('open')
     this.removeAttribute('data-door')
     this.dataset.content = ''
+  }
+
+  preloadContent () {
+    // console.log(`[CalendarDoor] Preloading content for door ${this.id}`)
+  }
+
+  displayContent () {
+    const src = `images/${this.packageConfig.filename}`
+
+    this.dispatchEvent(
+      new CustomEvent('display-image', {
+        bubbles: true,
+        composed: true,
+        detail: { src }
+      })
+    )
   }
 }
 

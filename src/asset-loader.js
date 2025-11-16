@@ -71,7 +71,7 @@ class AssetLoader {
     this.loadingStage = STAGE_PACKAGE_THUMBNAILS
 
     const imageFilenames = this._assetMapping.doors.map(
-      ({ packageId }) => this._assetMapping.packages[packageId]?.filename
+      ({ packageId }) => this._assetMapping.packages[packageId]?.thumbnail
     )
 
     await assetLoader.preloadImages(imageFilenames, (loaded, total) => {
