@@ -7,7 +7,7 @@
 
 html {
   color-scheme: light dark;
-  font-family: system-ui;
+  font-family: Arial, Helvetica, sans-serif;
 }
 
 .hide {
@@ -107,9 +107,4 @@ html {
 
 .calendar {
   position: relative;
-
-  calendar-door::part(door-backdrop),
-  calendar-door::part(door-content) {
-    border-radius: 15px;
-  }
 }

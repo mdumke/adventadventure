@@ -11,10 +11,11 @@ template.innerHTML = `
     </div>
 
     <div id="door-content" class="door-content" part="door-content">
-      <div class="play-icon hide" tabindex="0" role="button" aria-label="Play">
+      <div id="play-icon" class="play-icon hide" tabindex="0" role="button" aria-label="Play">
+       </div>
     </div>
 
-    <div id="door-frame" class="door-frame">
+    <div id="door-frame" class="door-frame" part="door-frame">
       <div class="label-container" part="label-container">
         <div id="label-text"></div>
       </div>

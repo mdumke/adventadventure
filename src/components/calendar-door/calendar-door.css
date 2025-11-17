@@ -23,9 +23,12 @@ main {
 
 .door-frame {
   position: absolute;
+  top: 0;
+  left: 0;
   width: 100%;
   height: 100%;
-  transition: transform 1.2s ease-out;
+  border: 5px dashed #333;
+  border-radius: 3px;
   cursor: pointer;
   user-select: none;
   -webkit-user-select: none;
@@ -36,14 +39,16 @@ main {
   justify-content: center;
   background-repeat: no-repeat;
   background-position: center;
+  transition: transform 1.2s ease-out;
 }
 
 .label-container {
-  background-color: #fff;
+  background-color: rgba(255, 255, 255, 1);
   color: #333;
   border-radius: 50%;
-  width: 60%;
-  font-size: 25px;
+  border: 3px solid #222;
+  width: 40px;
+  font-size: 30px;
   aspect-ratio: 1 / 1;
   display: flex;
   align-items: center;
@@ -57,7 +62,8 @@ main {
   left: 0;
   width: 100%;
   height: 100%;
-  box-shadow: inset -3px 2px 6px rgba(0, 0, 0, 0.3);
+  box-shadow: inset -7px 10px 9px rgba(0, 0, 0, 0.4);
+  border-radius: 3px;
   cursor: pointer;
   -webkit-user-drag: none;
   background-repeat: no-repeat;
@@ -80,11 +86,12 @@ main {
   width: 100%;
   height: 100%;
   background-color: white;
+  border-radius: 3px;
 }
 
 .play-icon {
-  width: 20px;
-  height: 20px;
+  width: 30px;
+  height: 30px;
   background-color: rgba(0, 0, 0, 0.4);
   border: none;
   border-radius: 50%;
@@ -99,9 +106,9 @@ main {
   transform: translate(-34%, -50%);
   width: 0;
   height: 0;
-  border-left: 8px solid rgba(255, 255, 255, 0.7);
-  border-top: 5px solid transparent;
-  border-bottom: 5px solid transparent;
+  border-left: 14px solid rgba(255, 255, 255, 0.7);
+  border-top: 9px solid transparent;
+  border-bottom: 9px solid transparent;
 }
 
 .hide {

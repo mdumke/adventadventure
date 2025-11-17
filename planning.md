@@ -14,6 +14,7 @@
 - [ ] remember which doors are open
 - [ ] snow animations
 - [ ] move css for title state into html
+- [ ] blur out edges of calendar to white
 - [ ] curtain-like border for title-screen
 - [ ] load different images depending on resolution
 - [ ] estimate network connection speed

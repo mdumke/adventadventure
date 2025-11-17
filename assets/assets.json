@@ -1,177 +1,65 @@
 {
   "background": {
-    "filename": "dummy-map.webp",
-    "width": 1441,
-    "height": 881
+    "filename": "background-v01.webp",
+    "width": 2560,
+    "height": 1440
   },
   "doors": [
     {
       "id": "door-01",
       "label": "1",
-      "filename": "doors/door-01-91-131.png",
+      "filename": "doors/door-696-481-69-128.webp",
       "position": {
-        "left": 60,
-        "top": 60
+        "left": 696,
+        "top": 481
       },
-      "packageId": "monkey-01"
+      "size": {
+        "width": 69,
+        "height": 128
+      },
+      "packageId": "moondog-01"
     },
     {
       "id": "door-02",
       "label": "2",
-      "filename": "doors/door-02-91-131.png",
+      "filename": "doors/door-1918-1031-203-163.webp",
       "position": {
-        "left": 50,
-        "top": 710
+        "left": 1918,
+        "top": 1031
       },
-      "packageId": "derya-01"
+      "size": {
+        "width": 203,
+        "height": 163
+      },
+      "packageId": "moondog-02"
     },
     {
       "id": "door-03",
       "label": "3",
-      "filename": "doors/door-03-91-131.png",
+      "filename": "doors/door-1018-765-100-127.webp",
       "position": {
-        "left": 350,
-        "top": 430
+        "left": 1018,
+        "top": 765
       },
-      "packageId": "monkey-02"
-    },
-    {
-      "id": "door-04",
-      "label": "4",
-      "filename": "doors/door-04-91-131.png",
-      "position": {
-        "left": 820,
-        "top": 540
+      "size": {
+        "width": 100,
+        "height": 127
       },
-      "packageId": "monkey-03"
-    },
-    {
-      "id": "door-05",
-      "label": "5",
-      "filename": "doors/door-05-91-131.png",
-      "position": {
-        "left": 950,
-        "top": 150
-      },
-      "packageId": "derya-02"
-    },
-    {
-      "id": "door-06",
-      "label": "6",
-      "filename": "doors/door-06-91-131.png",
-      "position": {
-        "left": 1310,
-        "top": 30
-      },
-      "packageId": "monkey-04"
-    },
-    {
-      "id": "door-07",
-      "label": "7",
-      "filename": "doors/door-07-91-131.png",
-      "position": {
-        "left": 1310,
-        "top": 710
-      },
-      "packageId": "derya-03"
+      "packageId": "moondog-03"
     }
   ],
   "packages": {
-    "derya-01": {
-      "thumbnail": "packages/derya-01.webp",
-      "src": "https://www.youtube-nocookie.com/embed/TWEp_Z9gLCo?si=pVZsp8uZtgGMbV-B"
+    "moondog-01": {
+      "thumbnail": "packages/moondog-90-167.webp",
+      "src": "https://www.youtube-nocookie.com/embed/zdef5wZymnk?si=QE--7g9BRntQUP6d"
     },
-    "derya-02": {
-      "thumbnail": "packages/derya-02.webp",
-      "src": "https://www.youtube-nocookie.com/embed/TWEp_Z9gLCo?si=pVZsp8uZtgGMbV-B"
+    "moondog-02": {
+      "thumbnail": "packages/moondog-230-184.webp",
+      "src": "https://www.youtube-nocookie.com/embed/zdef5wZymnk?si=QE--7g9BRntQUP6d"
     },
-    "derya-03": {
-      "thumbnail": "packages/derya-03.webp",
-      "src": "https://www.youtube-nocookie.com/embed/TWEp_Z9gLCo?si=pVZsp8uZtgGMbV-B"
-    },
-    "derya-04": {
-      "thumbnail": "packages/derya-04.webp",
-      "src": "https://www.youtube-nocookie.com/embed/TWEp_Z9gLCo?si=pVZsp8uZtgGMbV-B"
-    },
-    "derya-05": {
-      "thumbnail": "packages/derya-05.webp",
-      "src": "https://www.youtube-nocookie.com/embed/TWEp_Z9gLCo?si=pVZsp8uZtgGMbV-B"
-    },
-    "derya-06": {
-      "thumbnail": "packages/derya-06.webp",
-      "src": "https://www.youtube-nocookie.com/embed/TWEp_Z9gLCo?si=pVZsp8uZtgGMbV-B"
-    },
-    "derya-07": {
-      "thumbnail": "packages/derya-07.webp",
-      "src": "https://www.youtube-nocookie.com/embed/TWEp_Z9gLCo?si=pVZsp8uZtgGMbV-B"
-    },
-    "derya-08": {
-      "thumbnail": "packages/derya-08.webp",
-      "src": "https://www.youtube-nocookie.com/embed/TWEp_Z9gLCo?si=pVZsp8uZtgGMbV-B"
-    },
-    "derya-09": {
-      "thumbnail": "packages/derya-09.webp",
-      "src": "https://www.youtube-nocookie.com/embed/TWEp_Z9gLCo?si=pVZsp8uZtgGMbV-B"
-    },
-    "derya-10": {
-      "thumbnail": "packages/derya-10.webp",
-      "src": "https://www.youtube-nocookie.com/embed/TWEp_Z9gLCo?si=pVZsp8uZtgGMbV-B"
-    },
-    "derya-11": {
-      "thumbnail": "packages/derya-11.webp",
-      "src": "https://www.youtube-nocookie.com/embed/TWEp_Z9gLCo?si=pVZsp8uZtgGMbV-B"
-    },
-    "derya-12": {
-      "thumbnail": "packages/derya-12.webp",
-      "src": "https://www.youtube-nocookie.com/embed/TWEp_Z9gLCo?si=pVZsp8uZtgGMbV-B"
-    },
-    "monkey-01": {
-      "thumbnail": "packages/monkey-01.webp",
-      "src": "https://www.youtube-nocookie.com/embed/TWEp_Z9gLCo?si=pVZsp8uZtgGMbV-B"
-    },
-    "monkey-02": {
-      "thumbnail": "packages/monkey-02.webp",
-      "src": "https://www.youtube-nocookie.com/embed/TWEp_Z9gLCo?si=pVZsp8uZtgGMbV-B"
-    },
-    "monkey-03": {
-      "thumbnail": "packages/monkey-03.webp",
-      "src": "https://www.youtube-nocookie.com/embed/TWEp_Z9gLCo?si=pVZsp8uZtgGMbV-B"
-    },
-    "monkey-04": {
-      "thumbnail": "packages/monkey-04.webp",
-      "src": "https://www.youtube-nocookie.com/embed/TWEp_Z9gLCo?si=pVZsp8uZtgGMbV-B"
-    },
-    "monkey-05": {
-      "thumbnail": "packages/monkey-05.webp",
-      "src": "https://www.youtube-nocookie.com/embed/TWEp_Z9gLCo?si=pVZsp8uZtgGMbV-B"
-    },
-    "monkey-06": {
-      "thumbnail": "packages/monkey-06.webp",
-      "src": "https://www.youtube-nocookie.com/embed/TWEp_Z9gLCo?si=pVZsp8uZtgGMbV-B"
-    },
-    "monkey-07": {
-      "thumbnail": "packages/monkey-07.webp",
-      "src": "https://www.youtube-nocookie.com/embed/TWEp_Z9gLCo?si=pVZsp8uZtgGMbV-B"
-    },
-    "monkey-08": {
-      "thumbnail": "packages/monkey-08.webp",
-      "src": "https://www.youtube-nocookie.com/embed/TWEp_Z9gLCo?si=pVZsp8uZtgGMbV-B"
-    },
-    "monkey-09": {
-      "thumbnail": "packages/monkey-09.webp",
-      "src": "https://www.youtube-nocookie.com/embed/TWEp_Z9gLCo?si=pVZsp8uZtgGMbV-B"
-    },
-    "monkey-10": {
-      "thumbnail": "packages/monkey-10.webp",
-      "src": "https://www.youtube-nocookie.com/embed/TWEp_Z9gLCo?si=pVZsp8uZtgGMbV-B"
-    },
-    "monkey-11": {
-      "thumbnail": "packages/monkey-11.webp",
-      "src": "https://www.youtube-nocookie.com/embed/TWEp_Z9gLCo?si=pVZsp8uZtgGMbV-B"
-    },
-    "monkey-12": {
-      "thumbnail": "packages/monkey-12.webp",
-      "src": "https://www.youtube-nocookie.com/embed/TWEp_Z9gLCo?si=pVZsp8uZtgGMbV-B"
+    "moondog-03": {
+      "thumbnail": "packages/moondog-120-158.webp",
+      "src": "https://www.youtube-nocookie.com/embed/zdef5wZymnk?si=QE--7g9BRntQUP6d"
     }
   }
 }

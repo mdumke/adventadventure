@@ -105,12 +105,12 @@ class CalendarDoor extends HTMLElement {
   updatePackage () {
     const imgSrc = this.packageConfig.thumbnail
     this.$doorContent.style.backgroundImage = `url('images/${imgSrc}')`
-    this.$doorContent.querySelector('.play-icon').classList.remove('hide')
+    this.$doorContent.querySelector('#play-icon').classList.remove('hide')
   }
 
   openDoor () {
     const doorFrameWidth = this.$doorFrame.offsetWidth
-    this.$doorFrame.style.transform = `translateX(-${doorFrameWidth - 10}px)`
+    this.$doorFrame.style.transform = `translateX(-${doorFrameWidth - 2}px)`
     this.$doorFrame.classList.add('open')
     this.removeAttribute('data-door')
     this.dataset.content = ''

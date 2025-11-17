@@ -8,9 +8,10 @@ class UI {
 
   revealCalendar () {
     const $screen = this.selectElement('#title-screen')
-    $screen.classList.add('move-up')
-    // make sure the timing matches the CSS's move-up transition
-    setTimeout(() => $screen.remove(), 3000)
+    $screen.remove()
+    // $screen.classList.add('move-up')
+    // // make sure the timing matches the CSS's move-up transition
+    // setTimeout(() => $screen.remove(), 3000)
   }
 
   renderCalendarAssets () {
@@ -33,7 +34,7 @@ class UI {
 
   buildDoorElement (door) {
     const $door = document.createElement('calendar-door')
-    $door.config = { ...door, size: { width: 91, height: 131 } }
+    $door.config = door
     return $door
   }
 
