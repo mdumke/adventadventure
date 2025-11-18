@@ -35,10 +35,7 @@
 - [x] allow progress bar an initial transition
 - [x] provide fallback if thumnails not yet loaded
 - [x] fix flickering before calendar rendering
-
-## refactorings
-
-- [ ] intersect click events at the door, not calendar level
+- [x] reveal calendar without flickering even on re-focussing tab
 
 ## assets
 

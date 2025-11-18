@@ -10,6 +10,7 @@ class AssetLoader {
   loadingStage = STAGE_INITIAL
   progress = 0
   progressCallbacks = []
+  cachedImages = {}
 
   _assetMapping = null
 
@@ -89,6 +90,7 @@ class AssetLoader {
 
     const imagePromises = filenames.map(filename =>
       this.preloadImage(`${IMAGE_BASE_PATH}/${filename}`).then(img => {
+        this.cachedImages[filename] = img
         loaded++
         if (onProgress) onProgress(loaded, total)
         return img
@@ -106,6 +108,20 @@ class AssetLoader {
         reject(new Error(`[AssetLoader] failed to load image: ${src}`))
       img.src = src
     })
+  }
+
+  async refreshImage (src) {
+    const img = this.cachedImages[src]
+
+    if (!img) {
+      throw new Error(`[AssetLoader] image not cached: ${src}`)
+    }
+
+    try {
+      await img.decode()
+    } catch {
+      // ignore decode errors
+    }
   }
 
   async loadAssetMapping () {

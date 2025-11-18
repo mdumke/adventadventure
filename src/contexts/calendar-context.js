@@ -5,8 +5,8 @@ export class CalendarContext {
   key = 'calendar-context'
   $calendar = null
 
-  enter () {
-    this.render()
+  async enter () {
+    await this.render()
     this.$calendar = ui.selectElement('#calendar')
     this.$calendar.addEventListener('click', this.onCalendarClick)
     this.$calendar.addEventListener('show-player', this.onShowPlayer)
@@ -18,8 +18,8 @@ export class CalendarContext {
     this.$calendar.removeEventListener('click', this.onCalendarClick)
   }
 
-  render () {
-    ui.renderCalendarAssets()
+  async render () {
+    await ui.renderCalendarAssets()
     ui.selectElement('#pan-container').scrollToCenter()
     ui.revealCalendar()
   }

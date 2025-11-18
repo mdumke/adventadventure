@@ -14,14 +14,16 @@ class UI {
     // setTimeout(() => $screen.remove(), 3000)
   }
 
-  renderCalendarAssets () {
+  async renderCalendarAssets () {
     const assets = assetLoader.assetMapping
     const $calendar = ui.selectElement('#calendar')
-    this.renderBackground($calendar, assets)
+    await this.renderBackground($calendar, assets)
     this.renderDoors($calendar, assets)
   }
 
-  renderBackground ($calendar, { background }) {
+  async renderBackground ($calendar, { background }) {
+    // ensure the image is loaded before applying to avoid flicker
+    await assetLoader.refreshImage(background.filename)
     $calendar.style.backgroundImage = `url('images/${background.filename}')`
     $calendar.style.width = `${background.width}px`
     $calendar.style.height = `${background.height}px`
