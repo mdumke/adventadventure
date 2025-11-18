@@ -11,11 +11,13 @@
 - [x] implement content loading strategy
 - [x] build the background completely before lifting
 - [x] restrict door access
-- [ ] put placeholder image in media player (w/shadow)
+- [x] content image passepartout
 - [ ] remember which doors are open
+- [ ] put placeholder image in media player (w/shadow)
 - [ ] snow animations
-- [ ] move css for title state into html
 - [ ] blur out edges of calendar to white
+- [ ] settings section with storage reset and sounds on/off
+- [ ] move css for title state into html
 - [ ] curtain-like border for title-screen
 - [ ] load different images depending on resolution
 - [ ] estimate network connection speed

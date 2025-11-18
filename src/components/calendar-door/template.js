@@ -10,12 +10,14 @@ template.innerHTML = `
       <loading-spinner></loading-spinner>
     </div>
 
-    <div id="door-content" class="door-content" part="door-content">
-      <div id="play-icon" class="play-icon hide" tabindex="0" role="button" aria-label="Play">
-       </div>
+    <div class="content-wrapper">
+      <div id="door-content" class="door-content">
+        <div id="play-icon" class="play-icon hide" tabindex="0" role="button" aria-label="Play">
+        </div>
+      </div>
     </div>
 
-    <div id="door-frame" class="door-frame" part="door-frame">
+    <div id="door-frame" class="door-frame">
       <div class="label-container" part="label-container">
         <div id="label-text"></div>
       </div>
