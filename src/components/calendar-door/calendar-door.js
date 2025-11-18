@@ -111,12 +111,13 @@ class CalendarDoor extends HTMLElement {
   openIfAllowed () {
     if (!allowOpen(this.config.label)) return false
 
-    const doorFrameWidth = this.$doorFrame.offsetWidth
-    this.$doorFrame.style.transform = `translateX(-${doorFrameWidth - 2}px)`
+    const width = this.config.size.width
+    this.$doorFrame.style.transform = `translateX(-${width - 2}px)`
     this.$doorFrame.classList.add('open')
     this.removeAttribute('data-door')
     this.setAttribute('open', 'true')
     this.dataset.content = ''
+    return true
   }
 
   displayContent () {

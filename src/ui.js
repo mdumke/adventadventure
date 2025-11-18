@@ -34,6 +34,13 @@ class UI {
     doors.forEach(door => $calendar.appendChild(this.buildDoorElement(door)))
   }
 
+  reopenDoors (openedDoors = {}) {
+    Object.keys(openedDoors).forEach(doorId => {
+      const $door = this.selectElement(`#${doorId}`)
+      $door.openIfAllowed()
+    })
+  }
+
   buildDoorElement (door) {
     const $door = document.createElement('calendar-door')
     $door.config = door

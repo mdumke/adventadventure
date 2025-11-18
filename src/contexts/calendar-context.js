@@ -1,11 +1,14 @@
 import { assetLoader, STAGE_PACKAGE_THUMBNAILS } from '../asset-loader.js'
+import { loadOpenedDoors, saveOpenedDoors } from '../storage.js'
 import { ui } from '../ui.js'
 
 export class CalendarContext {
   key = 'calendar-context'
+  openedDoors = {}
   $calendar = null
 
   async enter () {
+    this.openedDoors = loadOpenedDoors()
     await this.render()
     this.$calendar = ui.selectElement('#calendar')
     this.$calendar.addEventListener('click', this.onCalendarClick)
@@ -20,6 +23,7 @@ export class CalendarContext {
 
   async render () {
     await ui.renderCalendarAssets()
+    ui.reopenDoors(this.openedDoors)
     ui.selectElement('#pan-container').scrollToCenter()
     ui.revealCalendar()
   }
@@ -27,7 +31,10 @@ export class CalendarContext {
   onCalendarClick = event => {
     const $door = event.target.closest('[data-door]')
     if ($door) {
-      return $door.openIfAllowed()
+      this.openedDoors[$door.id] = true
+      saveOpenedDoors(this.openedDoors)
+      $door.openIfAllowed()
+      return
     }
 
     const $content = event.target.closest('[data-content]')

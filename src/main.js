@@ -8,6 +8,10 @@ import { contextManager } from './contexts/context-manager.js'
 import { TitleContext } from './contexts/title-context.js'
 
 const main = () => {
+  if (location.hash === '#reset') {
+    localStorage.clear()
+  }
+
   contextManager.change(new TitleContext())
 }
 

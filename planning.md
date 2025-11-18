@@ -12,7 +12,8 @@
 - [x] build the background completely before lifting
 - [x] restrict door access
 - [x] content image passepartout
-- [ ] remember which doors are open
+- [x] remember which doors are open
+- [ ] allow closing doors
 - [ ] put placeholder image in media player (w/shadow)
 - [ ] snow animations
 - [ ] blur out edges of calendar to white
@@ -43,6 +44,10 @@
 - [x] provide fallback if thumnails not yet loaded
 - [x] fix flickering before calendar rendering
 - [x] reveal calendar without flickering even on re-focussing tab
+
+## refactorings
+
+- [ ] use calendar class to keep track of doors
 
 ## assets
 
