@@ -1,3 +1,4 @@
+import { audioPlayer } from '../audio-player.js'
 import { assetLoader, STAGE_PACKAGE_THUMBNAILS } from '../asset-loader.js'
 import { loadOpenedDoors, saveOpenedDoors } from '../storage.js'
 import { ui } from '../ui.js'
@@ -26,22 +27,27 @@ export class CalendarContext {
     ui.reopenDoors(this.openedDoors)
     ui.selectElement('#pan-container').scrollToCenter()
     ui.startSnow()
+    await audioPlayer.unlock()
+    audioPlayer.play('scrub')
     ui.revealCalendar()
   }
 
   onCalendarClick = event => {
     const $door = event.target.closest('[data-door]')
     if ($door) {
-      this.openedDoors[$door.id] = true
-      saveOpenedDoors(this.openedDoors)
-      $door.openIfAllowed()
-      return
+      return this.onDoorClick($door)
     }
 
     const $content = event.target.closest('[data-content]')
     if ($content) {
       $content.displayContent()
     }
+  }
+
+  onDoorClick ($door) {
+    this.openedDoors[$door.id] = true
+    saveOpenedDoors(this.openedDoors)
+    $door.openIfAllowed()
   }
 
   onShowPlayer = event => {

@@ -1,3 +1,5 @@
+import { audioPlayer } from './audio-player'
+
 const ASSET_MAPPING_PATH = 'assets.json'
 const IMAGE_BASE_PATH = 'images'
 
@@ -11,6 +13,7 @@ class AssetLoader {
   progress = 0
   progressCallbacks = []
   cachedImages = {}
+  cachedAudioBuffers = {}
 
   _assetMapping = null
 
@@ -59,13 +62,31 @@ class AssetLoader {
       ...this._assetMapping.doors.map(door => door.filename)
     ]
 
-    await assetLoader.preloadImages(imageFilenames, (loaded, total) => {
-      const progress = total === 0 ? 0 : Math.floor((loaded / total) * 100)
-      this.progress = progress
-      this.progressCallbacks.forEach(({ cb }) =>
-        cb(this.loadingStage, progress, progress === 100)
-      )
+    const audioFiles = this._assetMapping.audio
+
+    let total = imageFilenames.length + audioFiles.length
+    let count = 0
+
+    await this.preloadImages(imageFilenames, () => {
+      count++
+      this.onProgress(count, total)
     })
+
+    await Promise.all(
+      audioFiles.map(async ({ name, filename }) => {
+        await audioPlayer.load(name, `audio/${filename}`)
+        count++
+        this.onProgress(count, total)
+      })
+    )
+  }
+
+  onProgress (loaded, total) {
+    const progress = total === 0 ? 0 : Math.floor((loaded / total) * 100)
+    this.progress = progress
+    this.progressCallbacks.forEach(({ cb }) =>
+      cb(this.loadingStage, progress, progress === 100)
+    )
   }
 
   async preloadPackageThumbnails () {
@@ -110,6 +131,11 @@ class AssetLoader {
     })
   }
 
+  async loadAssetMapping () {
+    const response = await fetch(ASSET_MAPPING_PATH)
+    this._assetMapping = await response.json()
+  }
+
   async refreshImage (src) {
     const img = this.cachedImages[src]
 
@@ -122,11 +148,6 @@ class AssetLoader {
     } catch {
       // ignore decode errors
     }
-  }
-
-  async loadAssetMapping () {
-    const response = await fetch(ASSET_MAPPING_PATH)
-    this._assetMapping = await response.json()
   }
 }
 

@@ -64,6 +64,8 @@ html {
   background-color: #fff;
   font-size: 16px;
   text-align: center;
+  border-bottom: 1px solid #222;
+  box-shadow: 0 4px 20px -4px rgba(0, 0, 0, 0.18);
 
   .start-button {
     width: 70%;

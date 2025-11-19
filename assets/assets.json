@@ -1,4 +1,10 @@
 {
+  "audio": [
+    {
+      "name": "scrub",
+      "filename": "scrub.mp3"
+    }
+  ],
   "background": {
     "filename": "background-v01.webp",
     "width": 2560,
