@@ -7,12 +7,17 @@ class UI {
     this.$app = this.selectElement('#app')
   }
 
-  revealCalendar () {
-    const $screen = this.selectElement('#title-screen')
-    $screen.remove()
-    // $screen.classList.add('move-up')
-    // // make sure the timing matches the CSS's move-up transition
-    // setTimeout(() => $screen.remove(), 3000)
+  async revealCalendar () {
+    return new Promise(resolve => {
+      const $screen = this.selectElement('#title-screen')
+
+      // make sure the timing matches the CSS's move-up transition
+      $screen.classList.add('move-up')
+      setTimeout(() => {
+        $screen.remove()
+        resolve()
+      }, 3000)
+    })
   }
 
   async renderCalendarAssets () {

@@ -30,7 +30,7 @@ export class CalendarContext {
     ui.startSnow(300)
     await audioPlayer.unlock()
     ui.playAmbience()
-    ui.revealCalendar()
+    await ui.revealCalendar()
   }
 
   onCalendarClick = event => {

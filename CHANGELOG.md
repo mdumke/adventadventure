@@ -15,3 +15,6 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - edge-blur overlay
 
 ## Changed
+
+- switch to larger bg image (3200x1800)
+- slide-transition to calendar

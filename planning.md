@@ -17,7 +17,7 @@
 - [x] snow animations
 - [x] play door sounds
 - [x] play wind background sound
-- [ ] fade title screen to black before opening
+- [x] reveal calendar via slide
 - [ ] add sound-toggle in the calendar corner
 - [ ] start versioning releases
 - [ ] is there a way to reduce yt ads?
