@@ -4,8 +4,8 @@
  *
  */
 
+import { ui } from '../../ui.js'
 import { template } from './template.js'
-import { audioPlayer } from '../../audio-player.js'
 import { allowOpen } from '../../utils.js'
 
 /**
@@ -118,7 +118,7 @@ class CalendarDoor extends HTMLElement {
     this.removeAttribute('data-door')
     this.setAttribute('open', 'true')
     this.dataset.content = ''
-    if (!silent) audioPlayer.play('door')
+    if (!silent) ui.playSound('door')
     return true
   }
 

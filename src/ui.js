@@ -1,3 +1,4 @@
+import { audioPlayer } from './audio-player.js'
 import { assetLoader } from './asset-loader.js'
 class UI {
   $app = null
@@ -53,6 +54,12 @@ class UI {
     const $door = document.createElement('calendar-door')
     $door.config = door
     return $door
+  }
+
+  playSound (name) {
+    audioPlayer.play(name, {
+      volume: assetLoader.audioInfo[name]?.volume || 1.0
+    })
   }
 
   updateProgressBar ($bar, progress, minValue = 2) {

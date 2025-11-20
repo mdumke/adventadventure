@@ -14,6 +14,7 @@ class AssetLoader {
   progressCallbacks = []
   cachedImages = {}
   cachedAudioBuffers = {}
+  audioInfo = {}
 
   _assetMapping = null
 
@@ -76,6 +77,7 @@ class AssetLoader {
       audioFiles.map(async ({ name, filename, volume }) => {
         await audioPlayer.load(name, `audio/${filename}`, { volume })
         count++
+        this.audioInfo[name] = { volume }
         this.onProgress(count, total)
       })
     )

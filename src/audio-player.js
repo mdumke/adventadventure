@@ -2,11 +2,10 @@ class AudioPlayer {
   constructor () {
     this.audioCtx = null
     this.buffers = {}
-    this.metainfo = {}
     this.activeSources = {}
   }
 
-  play (name) {
+  play (name, { volume = 1.0 } = {}) {
     if (!this.audioCtx) {
       return console.warn(`[AudioPlayer] audio context is locked`)
     }
@@ -19,9 +18,8 @@ class AudioPlayer {
     const source = this.audioCtx.createBufferSource()
     source.buffer = buffer
 
-    const vol = parseFloat(this.metainfo[name]?.volume) || 1.0
     const gain = this.audioCtx.createGain()
-    gain.gain.value = Math.max(0, vol)
+    gain.gain.value = Math.max(0, volume)
     source.connect(gain)
     gain.connect(this.audioCtx.destination)
 
@@ -35,11 +33,10 @@ class AudioPlayer {
 
   // Loads audio files and converts them to AudioBuffers.
   // This can be done even when the AudioContext is suspended.
-  async load (name, src, config = {}) {
+  async load (name, src) {
     const raw = await fetch(src)
     const buffer = await raw.arrayBuffer()
     this.buffers[name] = buffer
-    this.metainfo[name] = { ...config }
   }
 
   async unlock () {
