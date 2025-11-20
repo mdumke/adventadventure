@@ -3,13 +3,13 @@
     {
       "name": "door",
       "filename": "door.mp3",
-      "volume": 0.3
+      "volume": 0.1
     }
   ],
   "background": {
-    "filename": "background-v01.webp",
-    "width": 2560,
-    "height": 1440
+    "filename": "background-v02.webp",
+    "width": 3200,
+    "height": 1800
   },
   "doors": [
     {
@@ -17,8 +17,8 @@
       "label": "1",
       "filename": "doors/door-696-481-69-128.webp",
       "position": {
-        "left": 696,
-        "top": 481
+        "left": 1400,
+        "top": 1031
       },
       "size": {
         "width": 69,
@@ -45,7 +45,7 @@
       "label": "3",
       "filename": "doors/door-1018-765-100-127.webp",
       "position": {
-        "left": 1018,
+        "left": 1518,
         "top": 765
       },
       "size": {

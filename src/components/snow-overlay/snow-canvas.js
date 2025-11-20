@@ -2,10 +2,10 @@ export class SnowCanvas {
   // Central configuration object for snowfall tuning
   static DEFAULT_CONFIG = {
     radius: { min: 1, range: 4 },
-    opacity: { min: 0.2, range: 0.4 },
-    blur: { min: 10, range: 2 },
-    fallSpeed: { min: 0.2, range: 1.3 },
-    driftSpeed: { baseRange: 0.1, depthRange: 2.8 },
+    opacity: { min: 0.9, range: 0.1 },
+    blur: { min: 3, range: 1 },
+    fallSpeed: { min: 0.1, range: 0.7 },
+    driftSpeed: { baseRange: 0.1, depthRange: 1.8 },
     driftPhaseIncrement: { base: 0.01, factor: 0.01 }
   }
 
@@ -92,8 +92,8 @@ export class SnowCanvas {
     ctx.save()
     ctx.globalAlpha = opacity
     ctx.shadowBlur = blur
-    ctx.shadowColor = '#ff9100ff'
-    ctx.fillStyle = '#ffc400ff'
+    ctx.shadowColor = '#006b66ff'
+    ctx.fillStyle = '#ffffffff'
 
     ctx.beginPath()
     ctx.arc(x, y, radius, 0, Math.PI * 2)

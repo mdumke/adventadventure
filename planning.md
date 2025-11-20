@@ -16,12 +16,13 @@
 - [x] blur out edges of calendar to white
 - [x] snow animations
 - [x] play door sounds
+- [ ] play wind background sound
 - [ ] start versioning releases
 - [ ] is there a way to reduce yt ads?
-- [ ] add ambient soundscape
 - [ ] fade title screen to black before opening
 - [ ] put placeholder image in media player (w/shadow)
 - [ ] add navigation indicators to pan container
+- [ ] add full ambient soundscape
 - [ ] settings section with storage reset and sounds on/off
 - [ ] allow closing doors
 - [ ] move css for title state into html

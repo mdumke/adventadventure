@@ -32,9 +32,9 @@ class UI {
     $calendar.style.height = `${background.height}px`
   }
 
-  startSnow () {
+  startSnow (flakeCount) {
     const $snow = this.selectElement('#snow-overlay')
-    $snow.startSnow(200)
+    $snow.startSnow(flakeCount)
   }
 
   renderDoors ($calendar, { doors }) {
@@ -45,7 +45,7 @@ class UI {
   reopenDoors (openedDoors = {}) {
     Object.keys(openedDoors).forEach(doorId => {
       const $door = this.selectElement(`#${doorId}`)
-      $door.openIfAllowed()
+      $door.openIfAllowed({ silent: true })
     })
   }
 

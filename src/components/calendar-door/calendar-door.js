@@ -109,7 +109,7 @@ class CalendarDoor extends HTMLElement {
     this.$doorContent.querySelector('#play-icon').classList.remove('hide')
   }
 
-  openIfAllowed () {
+  openIfAllowed ({ silent } = {}) {
     if (!allowOpen(this.config.label)) return false
 
     const width = this.config.size.width
@@ -118,7 +118,7 @@ class CalendarDoor extends HTMLElement {
     this.removeAttribute('data-door')
     this.setAttribute('open', 'true')
     this.dataset.content = ''
-    audioPlayer.play('door')
+    if (!silent) audioPlayer.play('door')
     return true
   }
 
