@@ -18,6 +18,7 @@ export class CalendarContext {
     document.addEventListener('player-closed', this.onPlayerClosed)
     document.addEventListener('audio-mute', this.onAudioMute)
     document.addEventListener('audio-unmute', this.onAudioUnmute)
+    document.addEventListener('visibilitychange', this.onVisibilityChange)
     this.handlePackages()
   }
 
@@ -71,6 +72,14 @@ export class CalendarContext {
   onAudioUnmute = () => {
     ui.playSound('click')
     audioPlayer.resume()
+  }
+
+  onVisibilityChange = () => {
+    if (document.hidden) {
+      audioPlayer.pause()
+    } else {
+      audioPlayer.resume()
+    }
   }
 
   handlePackages () {
