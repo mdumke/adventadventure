@@ -56,9 +56,12 @@ export class CalendarContext {
   }
 
   onDoorClick ($door) {
+    if (!$door.mayOpen()) return
+
     this.openedDoors[$door.id] = true
     saveOpenedDoors(this.openedDoors)
-    $door.openIfAllowed()
+    $door.open()
+    ui.playSound('door')
   }
 
   onShowPlayer = event => {

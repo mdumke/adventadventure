@@ -4,7 +4,6 @@
  *
  */
 
-import { ui } from '../../ui.js'
 import { template } from './template.js'
 import { allowOpen } from '../../utils.js'
 
@@ -109,17 +108,21 @@ class CalendarDoor extends HTMLElement {
     this.$doorContent.querySelector('#play-icon').classList.remove('hide')
   }
 
-  openIfAllowed ({ silent } = {}) {
-    if (!allowOpen(this.config.label)) return false
+  openIfAllowed () {
+    if (this.mayOpen()) this.open()
+  }
 
+  mayOpen () {
+    return allowOpen(this.config.label)
+  }
+
+  open () {
     const width = this.config.size.width
     this.$doorFrame.style.transform = `translateX(-${width - 2}px)`
     this.$doorFrame.classList.add('open')
     this.removeAttribute('data-door')
     this.setAttribute('open', 'true')
     this.dataset.content = ''
-    if (!silent) ui.playSound('door')
-    return true
   }
 
   displayContent () {

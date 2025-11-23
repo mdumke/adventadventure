@@ -72,10 +72,12 @@ class UI {
     })
   }
 
+  // @param {Object} openedDoors - map of door IDs that are opened
+  // e.g. { door-1: true, door-3: true }
   reopenDoors (openedDoors = {}) {
     Object.keys(openedDoors).forEach(doorId => {
       const $door = this.selectElement(`#${doorId}`)
-      $door.openIfAllowed({ silent: true })
+      $door.open()
     })
   }
 
