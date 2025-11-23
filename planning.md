@@ -64,7 +64,7 @@
 - [x] reveal calendar without flickering even on re-focussing tab
 - [x] show content thumbnails while curtain is lifting
 - [x] don't play obsolete sound effects after audio resume
-- [ ] await package loading before starting animations
+- [x] await package loading before starting animations
 - [ ] ensure timezone / day switch works
 
 ## refactorings

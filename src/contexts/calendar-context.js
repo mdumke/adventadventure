@@ -14,24 +14,14 @@ export class CalendarContext {
     await this.render()
     this.player = ui.selectElement('#media-player')
     this.$calendar = ui.selectElement('#calendar')
-    this.$calendar.addEventListener('click', this.onCalendarClick)
-    document.addEventListener('show-player', this.onShowPlayer)
-    document.addEventListener('player-closed', this.onPlayerClosed)
-    document.addEventListener('audio-mute', this.onAudioMute)
-    document.addEventListener('audio-unmute', this.onAudioUnmute)
-    document.addEventListener('enter-fullscreen', this.onEnterFullscreen)
-    document.addEventListener('exit-fullscreen', this.onExitFullscreen)
-    document.addEventListener('visibilitychange', this.onVisibilityChange)
-    document.addEventListener('tick', this.onTick)
-    this.handlePackages()
-
-    // TOOD: await package loading before starting animations !!!
-    this.startAnimations()
+    this.registerListeners()
+    this.prepareContentPackages()
+    this.startAnimationTimer()
     ui.revealCalendar()
   }
 
   exit () {
-    this.$calendar.removeEventListener('click', this.onCalendarClick)
+    this.removeListeners()
   }
 
   async render () {
@@ -104,7 +94,7 @@ export class CalendarContext {
     ui.updateAnimations(e.detail.i)
   }
 
-  handlePackages () {
+  prepareContentPackages () {
     assetLoader.packageThumbnailsReady
       ? ui.configurePackages()
       : assetLoader.registerProgressCallback(this.key, this.onLoadingProgress)
@@ -118,7 +108,31 @@ export class CalendarContext {
     ui.configurePackages()
   }
 
-  startAnimations () {
+  startAnimationTimer () {
     timer.run()
+  }
+
+  registerListeners () {
+    this.$calendar.addEventListener('click', this.onCalendarClick)
+    document.addEventListener('show-player', this.onShowPlayer)
+    document.addEventListener('player-closed', this.onPlayerClosed)
+    document.addEventListener('audio-mute', this.onAudioMute)
+    document.addEventListener('audio-unmute', this.onAudioUnmute)
+    document.addEventListener('enter-fullscreen', this.onEnterFullscreen)
+    document.addEventListener('exit-fullscreen', this.onExitFullscreen)
+    document.addEventListener('visibilitychange', this.onVisibilityChange)
+    document.addEventListener('tick', this.onTick)
+  }
+
+  removeListeners () {
+    this.$calendar.removeEventListener('click', this.onCalendarClick)
+    document.removeEventListener('show-player', this.onShowPlayer)
+    document.removeEventListener('player-closed', this.onPlayerClosed)
+    document.removeEventListener('audio-mute', this.onAudioMute)
+    document.removeEventListener('audio-unmute', this.onAudioUnmute)
+    document.removeEventListener('enter-fullscreen', this.onEnterFullscreen)
+    document.removeEventListener('exit-fullscreen', this.onExitFullscreen)
+    document.removeEventListener('visibilitychange', this.onVisibilityChange)
+    document.removeEventListener('tick', this.onTick)
   }
 }

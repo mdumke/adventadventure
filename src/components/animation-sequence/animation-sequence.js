@@ -58,6 +58,7 @@ class AnimationSequence extends HTMLElement {
     this.style.height = `${this.config.size.height}px`
     this.$canvas.width = this.config.size.width
     this.$canvas.height = this.config.size.height
+    this.renderFrame(0)
   }
 
   renderFrame (frameIndex) {
