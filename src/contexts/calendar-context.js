@@ -94,6 +94,10 @@ export class CalendarContext {
     ui.updateAnimations(e.detail.i)
   }
 
+  onKeyDown = e => {
+    if (e.code === 'Space') e.preventDefault()
+  }
+
   prepareContentPackages () {
     assetLoader.packageThumbnailsReady
       ? ui.configurePackages()
@@ -121,6 +125,7 @@ export class CalendarContext {
     document.addEventListener('enter-fullscreen', this.onEnterFullscreen)
     document.addEventListener('exit-fullscreen', this.onExitFullscreen)
     document.addEventListener('visibilitychange', this.onVisibilityChange)
+    document.addEventListener('keydown', this.onKeyDown)
     document.addEventListener('tick', this.onTick)
   }
 
@@ -133,6 +138,7 @@ export class CalendarContext {
     document.removeEventListener('enter-fullscreen', this.onEnterFullscreen)
     document.removeEventListener('exit-fullscreen', this.onExitFullscreen)
     document.removeEventListener('visibilitychange', this.onVisibilityChange)
+    document.removeEventListener('keydown', this.onKeyDown)
     document.removeEventListener('tick', this.onTick)
   }
 }

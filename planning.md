@@ -23,32 +23,35 @@
 - [x] toggle full-screen view
 - [x] support animations
 - [x] remove title sliding
-- [ ] glow behind active unopened doors
-- [ ] use arrows for fullscreen icon
+- [x] disable space-button panning
 - [ ] feedback when trying to open future doors
-- [ ] is there a way to reduce yt ads?
 - [ ] remember last scroll position
+- [ ] use arrows for fullscreen icon
+- [ ] is there a way to reduce yt ads?
 - [ ] moving clouds
 - [ ] loudness / speaker test
-- [ ] find a more appropriate font
-- [ ] disable space-button panning
 - [ ] js-disabled message
 - [ ] put placeholder image in media player (w/shadow)
 - [ ] fade master gain on cancel
-- [ ] add navigation indicators to pan container
 - [ ] add full ambient soundscape
 - [ ] build a title page
 - [ ] settings section with storage reset and sounds on/off
 - [ ] move css for title state into html
-- [ ] load different images depending on resolution
-- [ ] estimate network connection speed
-- [ ] HTTP 2
-- [ ] strategy for contact / copyright / cookies
 - [ ] error handling
 - [ ] create a PWA
 - [ ] audio: loudness adjustments
 - [ ] optimize media for download
+
+## backlog
+
 - [ ] hide snowflakes behind clouds layer
+- [ ] add navigation indicators to pan container
+- [ ] glow behind active unopened doors
+- [ ] load different images depending on resolution
+- [ ] estimate network connection speed
+- [ ] find a more appropriate font
+- [ ] HTTP 2
+- [ ] strategy for contact / copyright / cookies
 
 ## production
 
