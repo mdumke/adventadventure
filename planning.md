@@ -25,8 +25,9 @@
 - [x] remove title sliding
 - [x] disable space-button panning
 - [x] feedback when trying to open future doors
+- [x] remember last scroll position
 - [ ] moving clouds
-- [ ] remember last scroll position
+- [ ] yt iframe 1px smaller
 - [ ] use arrows for fullscreen icon
 - [ ] is there a way to reduce yt ads?
 - [ ] loudness / speaker test
@@ -120,5 +121,7 @@
 - [ ] sound effects and ambience recordings
 - [ ] texte / rundschreiben
 - [ ] descriptions / title for videos (?)
+  - in media player or on door-inside
 - [ ] who found the video (?)
 - [ ] glow behind active unopened doors (?)
+- [ ] info door?

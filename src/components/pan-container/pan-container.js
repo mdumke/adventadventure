@@ -29,7 +29,6 @@ class PanContainer extends HTMLElement {
   }
 
   connectedCallback () {
-    this.scrollToCenter()
     this.registerListeners()
   }
 
@@ -37,28 +36,16 @@ class PanContainer extends HTMLElement {
     this.removeListeners()
   }
 
-  scrollToCenter () {
+  scrollToInitial () {
     const { scrollWidth, clientWidth, scrollHeight, clientHeight } =
       this.$container
     const centerX = (scrollWidth - clientWidth) / 2
     const centerY = (scrollHeight - clientHeight) / 2
-    this.$container.scrollTo(centerX, centerY)
+    this.$container.scrollTo(centerX, centerY - 100)
   }
 
-  registerListeners () {
-    this.$container.addEventListener('pointerdown', this.startPan)
-    this.$container.addEventListener('pointerleave', this.stopPan)
-    this.$container.addEventListener('pointerup', this.stopPan)
-    this.$container.addEventListener('pointercancel', this.stopPan)
-    this.$container.addEventListener('pointermove', this.updatePan)
-  }
-
-  removeListeners () {
-    this.$container.removeEventListener('pointerdown', this.startPan)
-    this.$container.removeEventListener('pointerleave', this.stopPan)
-    this.$container.removeEventListener('pointerup', this.stopPan)
-    this.$container.removeEventListener('pointercancel', this.stopPan)
-    this.$container.removeEventListener('pointermove', this.updatePan)
+  scrollToPosition ({ x, y }) {
+    this.$container.scrollTo(x, y)
   }
 
   startPan = e => {
@@ -89,6 +76,36 @@ class PanContainer extends HTMLElement {
     this.isDown = false
     this.$container.classList.remove('active')
     this.$container.releasePointerCapture(e.pointerId)
+    this.dispatchPanUpdate()
+  }
+
+  dispatchPanUpdate () {
+    this.dispatchEvent(
+      new CustomEvent('pan-update', {
+        bubbles: true,
+        composed: true,
+        detail: {
+          scrollLeft: this.$container.scrollLeft,
+          scrollTop: this.$container.scrollTop
+        }
+      })
+    )
+  }
+
+  registerListeners () {
+    this.$container.addEventListener('pointerdown', this.startPan)
+    this.$container.addEventListener('pointerleave', this.stopPan)
+    this.$container.addEventListener('pointerup', this.stopPan)
+    this.$container.addEventListener('pointercancel', this.stopPan)
+    this.$container.addEventListener('pointermove', this.updatePan)
+  }
+
+  removeListeners () {
+    this.$container.removeEventListener('pointerdown', this.startPan)
+    this.$container.removeEventListener('pointerleave', this.stopPan)
+    this.$container.removeEventListener('pointerup', this.stopPan)
+    this.$container.removeEventListener('pointercancel', this.stopPan)
+    this.$container.removeEventListener('pointermove', this.updatePan)
   }
 }
 

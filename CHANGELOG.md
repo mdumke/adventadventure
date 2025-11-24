@@ -11,6 +11,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 - Audio-visual feedback for locked doors
 - Bells for opening doors
+- Remember last scroll position
+- Make initial position adjustable
 
 ### Changed
 

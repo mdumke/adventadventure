@@ -1,6 +1,10 @@
 import { audioPlayer } from '../audio-player.js'
 import { assetLoader, STAGE_PACKAGE_THUMBNAILS } from '../asset-loader.js'
-import { loadOpenedDoors, saveOpenedDoors } from '../storage.js'
+import {
+  loadOpenedDoors,
+  saveOpenedDoors,
+  saveLastPosition
+} from '../storage.js'
 import { timer } from '../timer.js'
 import { ui } from '../ui.js'
 
@@ -27,8 +31,8 @@ export class CalendarContext {
   async render () {
     await ui.renderCalendarAssets()
     ui.reopenDoors(this.openedDoors)
-    ui.selectElement('#pan-container').scrollToCenter()
-    ui.startSnow(300)
+    ui.restoreLastPosition()
+    ui.startSnow(400)
     await audioPlayer.unlock()
     ui.playAmbience()
   }
@@ -100,6 +104,13 @@ export class CalendarContext {
     if (e.code === 'Space') e.preventDefault()
   }
 
+  onPanUpdate = e => {
+    saveLastPosition({
+      x: e.detail.scrollLeft,
+      y: e.detail.scrollTop
+    })
+  }
+
   prepareContentPackages () {
     assetLoader.packageThumbnailsReady
       ? ui.configurePackages()
@@ -129,6 +140,7 @@ export class CalendarContext {
     document.addEventListener('visibilitychange', this.onVisibilityChange)
     document.addEventListener('keydown', this.onKeyDown)
     document.addEventListener('tick', this.onTick)
+    document.addEventListener('pan-update', this.onPanUpdate)
   }
 
   removeListeners () {
@@ -142,5 +154,6 @@ export class CalendarContext {
     document.removeEventListener('visibilitychange', this.onVisibilityChange)
     document.removeEventListener('keydown', this.onKeyDown)
     document.removeEventListener('tick', this.onTick)
+    document.removeEventListener('pan-update', this.onPanUpdate)
   }
 }
