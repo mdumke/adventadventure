@@ -1,6 +1,6 @@
 {
   "background": {
-    "filename": "background-v03.webp",
+    "filename": "background-v05-90p.webp",
     "width": 2560,
     "height": 1440
   },
@@ -56,11 +56,11 @@
   ],
   "packages": {
     "moondog-01": {
-      "thumbnail": "packages/moondog-90-167.webp",
-      "src": "https://www.youtube-nocookie.com/embed/zdef5wZymnk?si=QE--7g9BRntQUP6d"
+      "thumbnail": "packages/el-bahr-azra-90-167.webp",
+      "src": "https://www.youtube-nocookie.com/embed/89qY0jH6xUo?si=i0UZGg5RaDqxqSW6"
     },
     "moondog-02": {
-      "thumbnail": "packages/moondog-230-184.webp",
+      "thumbnail": "packages/one-string-230-184.webp",
       "src": "https://www.youtube-nocookie.com/embed/E8H-67ILaqc?si=mfJU1ep32Vl4rkJc"
     },
     "moondog-03": {
@@ -73,7 +73,7 @@
       {
         "name": "speaker-test",
         "filename": "bells.mp3",
-        "volume": 0.3
+        "volume": 0.2
       }
     ]
   },
