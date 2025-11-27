@@ -5,6 +5,12 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [0.5.0] - unreleased
+
+### Fixed
+
+- Avoid audio initialization warning
+
 ## [0.4.0] - 2025-11-26
 
 ### Added
@@ -20,7 +26,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Switch back to 2560x1440 format
 - Remove title-sliding
 
-### Fixesd
+### Fixed
 
 - Space-bar no longer starts scroll
 

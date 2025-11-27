@@ -27,26 +27,25 @@
 - [x] feedback when trying to open future doors
 - [x] remember last scroll position
 - [x] loudness / speaker test
+- [ ] icons for title buttons
 - [ ] moving clouds
-- [ ] do we still need the preload?
-- [ ] use arrows for fullscreen icon
 - [ ] load thumbnails before opening calendar
 - [ ] js-disabled message
 - [ ] put placeholder image in media player (w/shadow)
 - [ ] add full ambient soundscape
 - [ ] door 24 with credits, greetings and full image
 - [ ] build a title page
-- [ ] move css for title state into html
 - [ ] error handling
-- [ ] create a PWA
 - [ ] audio: loudness adjustments
-- [ ] is there a way to reduce yt ads?
 - [ ] ensure timezone / day switch works
 
 ## backlog
 
 - [ ] hide snowflakes behind clouds layer
 - [ ] add navigation indicators to pan container
+- [ ] move css for title state into html
+- [ ] do we still need the preload?
+- [ ] create a PWA
 - [ ] load different images depending on resolution
 - [ ] estimate network connection speed
 - [ ] find a more appropriate font
@@ -69,6 +68,7 @@
 - [x] show content thumbnails while curtain is lifting
 - [x] don't play obsolete sound effects after audio resume
 - [x] await package loading before starting animations
+- [x] fix disallowed audio context start message
 - [ ] ambience is back on after re-focus, even if off before
 
 ## refactorings
@@ -109,6 +109,7 @@
 - [x] Weirdly long screens see the calandar image at the top, not centered
 - [x] No doors on top of animations
 - [x] a speaker test makes sense
+- [x] all doors will have the same size
 
 ## discussion
 

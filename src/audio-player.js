@@ -18,7 +18,9 @@ class AudioPlayer {
     this.masterGain = this.audioCtx.createGain()
     this.masterGain.gain.value = 1.0
     this.masterGain.connect(this.audioCtx.destination)
-    await this.audioCtx.resume()
+    if (this.audioCtx.state === 'suspended') {
+      await this.audioCtx.resume()
+    }
     await this.decodeBuffers()
     this.locked = false
   }

@@ -23,13 +23,9 @@ const main = () => {
 
 document.addEventListener('DOMContentLoaded', main, { once: true })
 
-const initAudio = async () => {
+const initAudio = () => {
   audioPlayer.init()
-  window.removeEventListener('touchstart', initAudio)
-  window.removeEventListener('pointerdown', initAudio)
-  window.removeEventListener('keydown', initAudio)
+  document.removeEventListener('click', initAudio)
 }
 
-window.addEventListener('touchstart', initAudio)
-window.addEventListener('pointerdown', initAudio)
-window.addEventListener('keydown', initAudio)
+document.addEventListener('click', initAudio)
