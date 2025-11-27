@@ -70,14 +70,13 @@ export class CalendarContext {
   }
 
   onAudioMute = async () => {
-    ui.playSound('click').then(() => {
-      audioPlayer.pause()
-    })
+    await ui.playSound('click')
+    audioPlayer.pause(true)
   }
 
   onAudioUnmute = () => {
     ui.playSound('click')
-    audioPlayer.resume()
+    audioPlayer.resume(true)
   }
 
   onEnterFullscreen = () => {

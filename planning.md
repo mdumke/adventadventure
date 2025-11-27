@@ -27,17 +27,17 @@
 - [x] feedback when trying to open future doors
 - [x] remember last scroll position
 - [x] loudness / speaker test
+- [ ] build a title page
+- [ ] add full ambient soundscape
 - [ ] icons for title buttons
+- [ ] put placeholder image in media player (w/shadow)
+- [ ] js-disabled message
+- [ ] ensure timezone / day switch works
+- [ ] door 24 with credits, greetings and full image
 - [ ] moving clouds
 - [ ] load thumbnails before opening calendar
-- [ ] js-disabled message
-- [ ] put placeholder image in media player (w/shadow)
-- [ ] add full ambient soundscape
-- [ ] door 24 with credits, greetings and full image
-- [ ] build a title page
 - [ ] error handling
 - [ ] audio: loudness adjustments
-- [ ] ensure timezone / day switch works
 
 ## backlog
 
@@ -69,7 +69,7 @@
 - [x] don't play obsolete sound effects after audio resume
 - [x] await package loading before starting animations
 - [x] fix disallowed audio context start message
-- [ ] ambience is back on after re-focus, even if off before
+- [x] ambience is back on after re-focus, even if off before
 
 ## refactorings
 
@@ -79,18 +79,13 @@
 ## assets
 
 ```yml
-- ui / ux:
-    - title and loading screen
-      - with loudness / speaker test ?
-    - texts
-
 - images:
     - calendar image
     - door numbers
-    - title graphics
+    - title
+    - speaker test button
+    - start button
     - favicon
-    - page background (?)
-    - audio player icons/buttons
 
 - audio:
     - doors
@@ -99,6 +94,9 @@
 
 - packages:
     - music + images + info
+
+- text:
+    - welcome / about
 ```
 
 ## decisions

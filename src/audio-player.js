@@ -9,6 +9,7 @@ class AudioPlayer {
       sounds: {},
       tracks: {}
     }
+    this.manualPause = false
   }
 
   async init () {
@@ -81,26 +82,36 @@ class AudioPlayer {
     this.arrayBuffers[name] = arrayBuffer
   }
 
-  async pause () {
+  async pause (manual = false) {
     if (!this.audioCtx) {
       return console.warn('[AudioPlayer] cannot pause: audio context locked')
     }
     if (this.audioCtx.state === 'suspended') return
     await this.audioCtx.suspend()
+    if (manual) {
+      this.manualPause = true
+    }
   }
 
-  async resume () {
+  async resume (manual = false) {
     if (!this.audioCtx) {
       return console.warn('[AudioPlayer] cannot resume: audio context locked')
     }
-    if (this.audioCtx.state === 'running') return
+    if (this.audioCtx.state === 'running') {
+      await this.audioCtx.resume()
+    }
+    if (this.manualPause && !manual) {
+      // do not auto-resume if manually paused
+      return
+    }
 
     // only resume ambience tracks; sound effects are one-shots
-    this.clearSources()
+    this.clearSources('sounds')
+    this.manualPause = false
     await this.audioCtx.resume()
   }
 
-  clearSources (key = 'sounds') {
+  clearSources (key) {
     Object.keys(this.activeSources[key]).forEach(name => {
       this._stop(name, key)
     })
