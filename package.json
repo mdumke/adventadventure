@@ -3,7 +3,7 @@
   "description": "An advent calendar website",
   "author": "Matthias Dumke [matthias.dumke@proton.me]",
   "private": true,
-  "version": "0.3.0",
+  "version": "0.4.0",
   "source": "src/index.html",
   "scripts": {
     "start": "parcel --host=0.0.0.0",
