@@ -23,7 +23,7 @@
         "width": 100,
         "height": 125
       },
-      "packageId": "moondog-03"
+      "packageId": "brushy"
     },
     {
       "id": "door-02",
@@ -37,7 +37,7 @@
         "width": 100,
         "height": 125
       },
-      "packageId": "moondog-03"
+      "packageId": "jubilaires"
     },
     {
       "id": "door-03",
@@ -51,7 +51,7 @@
         "width": 100,
         "height": 125
       },
-      "packageId": "moondog-03"
+      "packageId": "tempest"
     },
     {
       "id": "door-04",
@@ -66,7 +66,7 @@
         "height": 125
       },
       "direction": "right",
-      "packageId": "moondog-01"
+      "packageId": "zafiros"
     },
     {
       "id": "door-05",
@@ -80,7 +80,7 @@
         "width": 100,
         "height": 125
       },
-      "packageId": "moondog-03"
+      "packageId": "hermeto"
     },
     {
       "id": "door-06",
@@ -95,7 +95,7 @@
         "height": 125
       },
       "direction": "right",
-      "packageId": "moondog-03"
+      "packageId": "slits"
     },
     {
       "id": "door-07",
@@ -110,7 +110,7 @@
         "height": 125
       },
       "direction": "right",
-      "packageId": "moondog-03"
+      "packageId": "brushy"
     },
     {
       "id": "door-08",
@@ -125,7 +125,7 @@
         "height": 125
       },
       "direction": "right",
-      "packageId": "moondog-03"
+      "packageId": "brushy"
     },
     {
       "id": "door-09",
@@ -140,7 +140,7 @@
         "height": 125
       },
       "direction": "right",
-      "packageId": "moondog-03"
+      "packageId": "brushy"
     },
     {
       "id": "door-10",
@@ -154,7 +154,7 @@
         "width": 100,
         "height": 125
       },
-      "packageId": "moondog-03"
+      "packageId": "brushy"
     },
     {
       "id": "door-11",
@@ -169,7 +169,7 @@
         "height": 125
       },
       "direction": "right",
-      "packageId": "moondog-03"
+      "packageId": "brushy"
     },
     {
       "id": "door-12",
@@ -183,7 +183,7 @@
         "width": 100,
         "height": 125
       },
-      "packageId": "moondog-03"
+      "packageId": "brushy"
     },
     {
       "id": "door-13",
@@ -197,7 +197,7 @@
         "width": 100,
         "height": 125
       },
-      "packageId": "moondog-03"
+      "packageId": "brushy"
     },
     {
       "id": "door-14",
@@ -211,7 +211,7 @@
         "width": 100,
         "height": 125
       },
-      "packageId": "moondog-03"
+      "packageId": "brushy"
     },
     {
       "id": "door-15",
@@ -226,7 +226,7 @@
         "height": 125
       },
       "direction": "right",
-      "packageId": "moondog-03"
+      "packageId": "brushy"
     },
     {
       "id": "door-16",
@@ -241,7 +241,7 @@
         "height": 125
       },
       "direction": "right",
-      "packageId": "moondog-03"
+      "packageId": "brushy"
     },
     {
       "id": "door-17",
@@ -256,7 +256,7 @@
         "height": 125
       },
       "direction": "right",
-      "packageId": "moondog-03"
+      "packageId": "brushy"
     },
     {
       "id": "door-18",
@@ -270,7 +270,7 @@
         "width": 100,
         "height": 125
       },
-      "packageId": "moondog-03"
+      "packageId": "brushy"
     },
     {
       "id": "door-19",
@@ -284,7 +284,7 @@
         "width": 100,
         "height": 125
       },
-      "packageId": "moondog-03"
+      "packageId": "brushy"
     },
     {
       "id": "door-20",
@@ -298,7 +298,7 @@
         "width": 100,
         "height": 125
       },
-      "packageId": "moondog-03"
+      "packageId": "brushy"
     },
     {
       "id": "door-21",
@@ -312,7 +312,7 @@
         "width": 100,
         "height": 125
       },
-      "packageId": "moondog-03"
+      "packageId": "brushy"
     },
     {
       "id": "door-22",
@@ -326,7 +326,7 @@
         "width": 100,
         "height": 125
       },
-      "packageId": "moondog-03"
+      "packageId": "brushy"
     },
     {
       "id": "door-23",
@@ -340,7 +340,7 @@
         "width": 100,
         "height": 125
       },
-      "packageId": "moondog-03"
+      "packageId": "brushy"
     },
     {
       "id": "door-24",
@@ -354,21 +354,33 @@
         "width": 100,
         "height": 125
       },
-      "packageId": "moondog-03"
+      "packageId": "brushy"
     }
   ],
   "packages": {
-    "moondog-01": {
-      "thumbnail": "packages/el-bahr-azra-90-167.webp",
-      "src": "https://www.youtube-nocookie.com/embed/89qY0jH6xUo?si=i0UZGg5RaDqxqSW6"
-    },
-    "moondog-02": {
-      "thumbnail": "packages/one-string-230-184.webp",
+    "brushy": {
+      "thumbnail": "packages/brushy.webp",
       "src": "https://www.youtube-nocookie.com/embed/E8H-67ILaqc?si=mfJU1ep32Vl4rkJc"
     },
-    "moondog-03": {
-      "thumbnail": "packages/moondog-120-158.webp",
-      "src": "https://www.youtube-nocookie.com/embed/zdef5wZymnk?si=QE--7g9BRntQUP6d"
+    "zafiros": {
+      "thumbnail": "packages/zafiros.webp",
+      "src": "https://www.youtube-nocookie.com/embed/wFCG2TIEAjY?si=Jy5M3lL8-GAvA5Cu"
+    },
+    "jubilaires": {
+      "thumbnail": "packages/jubilaires.webp",
+      "src": "https://www.youtube-nocookie.com/embed/Xij0RcW6FTA?si=YAJH3iWpvpSpPbxv"
+    },
+    "hermeto": {
+      "thumbnail": "packages/hermeto.webp",
+      "src": "https://www.youtube-nocookie.com/embed/lZbfNtDCHdM?si=4GgT4YTJyb_gv4hI"
+    },
+    "slits": {
+      "thumbnail": "packages/slits.webp",
+      "src": "https://www.youtube-nocookie.com/embed/SqiFYcKEhxs?si=oMENwGGwQNR0yEd3"
+    },
+    "tempest": {
+      "thumbnail": "packages/tempest.webp",
+      "src": "https://www.youtube-nocookie.com/embed/aTDOFaAcEyc?si=0mY70JjhQnrrckW4"
     }
   },
   "title": {
