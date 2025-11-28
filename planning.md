@@ -27,12 +27,15 @@
 - [x] feedback when trying to open future doors
 - [x] remember last scroll position
 - [x] loudness / speaker test
+- [x] ensure timezone / day switch works
+- [x] support opening to right
+- [x] create 24 doors
 - [ ] build a title page
 - [ ] add full ambient soundscape
+- [ ] cache by rendering full images hidden
 - [ ] icons for title buttons
 - [ ] put placeholder image in media player (w/shadow)
 - [ ] js-disabled message
-- [ ] ensure timezone / day switch works
 - [ ] door 24 with credits, greetings and full image
 - [ ] moving clouds
 - [ ] load thumbnails before opening calendar

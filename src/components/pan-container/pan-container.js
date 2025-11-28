@@ -41,7 +41,7 @@ class PanContainer extends HTMLElement {
       this.$container
     const centerX = (scrollWidth - clientWidth) / 2
     const centerY = (scrollHeight - clientHeight) / 2
-    this.$container.scrollTo(centerX, centerY - 100)
+    this.$container.scrollTo(centerX, centerY - 60)
   }
 
   scrollToPosition ({ x, y }) {

@@ -25,6 +25,7 @@ class CalendarDoor extends HTMLElement {
    *   label: '1',
    *   position: { x: 100, y: 200 },
    *   size: { width: 91, height: 131 },
+   *   direction: 'right', // (optional, missing indicates left)
    *   filename: 'doors/door-01.png',
    *   packageId: 'package-01'
    * }
@@ -124,7 +125,9 @@ class CalendarDoor extends HTMLElement {
 
   open () {
     const width = this.config.size.width
-    this.$doorFrame.style.transform = `translateX(-${width - 2}px)`
+    const direction = this.config.direction || 'left'
+    const dx = direction === 'left' ? `-${width - 2}px` : `${width - 2}px`
+    this.$doorFrame.style.transform = `translateX(${dx})`
     this.$doorFrame.classList.add('open')
     this.removeAttribute('data-door')
     this.setAttribute('open', 'true')
