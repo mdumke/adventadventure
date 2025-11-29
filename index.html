@@ -1,0 +1,42 @@
+<!DOCTYPE html><html lang=en><meta charset=utf-8><meta name=viewport content="width=device-width, initial-scale=1.0"><meta name=referrer content=no-referrer-when-downgrade><title>xmasmisfits</title><link rel=stylesheet href=/xmasmisfits/xmasmisfits.1febc2a2.css><body>
+  <div id=app class=app>
+    <div class=screen-wrapper>
+
+      <div id=title-screen class="screen title-screen">
+        <div class=title-content>
+          <h1>Xmas Misfits</h1>
+          <div id=interaction-area>
+            <div class=title-buttons>
+              <div class=labeled-button>
+                <label for=speaker-button>Speaker Test</label>
+                <button id=speaker-button class=round-button disabled></button>
+              </div>
+              <div id=start-button class="hide labeled-button">
+                <label for=start-button>Go to Calendar</label>
+                <button class=round-button></button>
+              </div>
+            </div>
+          </div>
+          <progress-bar id=progress-bar class="hide progress-bar"></progress-bar>
+        </div>
+      </div>
+
+      <div class="calendar-screen screen">
+        <media-player id=media-player></media-player>
+        <audio-toggle on></audio-toggle>
+        <fullscreen-toggle></fullscreen-toggle>
+        <pan-container id=pan-container class=pan-container>
+          <blur-overlay></blur-overlay>
+          <snow-overlay id=snow-overlay>
+            <div id=calendar class=calendar></div>
+          </snow-overlay>
+        </pan-container>
+      </div>
+
+    </div>
+  </div>
+
+  <script type=module src=/xmasmisfits/xmasmisfits.53c3d65b.js></script>
+
+
+

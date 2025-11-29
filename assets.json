@@ -1,0 +1,443 @@
+{
+  "background": {
+    "filename": "background-v05-90p.webp",
+    "width": 2560,
+    "height": 1440
+  },
+  "ui": [
+    "ui/volume.svg",
+    "ui/volume-slash.svg",
+    "ui/minimize.svg",
+    "ui/maximize.svg"
+  ],
+  "doors": [
+    {
+      "id": "door-01",
+      "label": "12",
+      "filename": "doors/door-200-86.webp",
+      "position": {
+        "left": 200,
+        "top": 86
+      },
+      "size": {
+        "width": 100,
+        "height": 125
+      },
+      "packageId": "brushy"
+    },
+    {
+      "id": "door-02",
+      "label": "2",
+      "filename": "doors/door-272-1004.webp",
+      "position": {
+        "left": 272,
+        "top": 1004
+      },
+      "size": {
+        "width": 100,
+        "height": 125
+      },
+      "packageId": "jubilaires"
+    },
+    {
+      "id": "door-03",
+      "label": "3",
+      "filename": "doors/door-276-828.webp",
+      "position": {
+        "left": 276,
+        "top": 828
+      },
+      "size": {
+        "width": 100,
+        "height": 125
+      },
+      "packageId": "tempest"
+    },
+    {
+      "id": "door-04",
+      "label": "4",
+      "filename": "doors/door-312-88-right.webp",
+      "position": {
+        "left": 312,
+        "top": 88
+      },
+      "size": {
+        "width": 100,
+        "height": 125
+      },
+      "direction": "right",
+      "packageId": "zafiros"
+    },
+    {
+      "id": "door-05",
+      "label": "5",
+      "filename": "doors/door-1066-810.webp",
+      "position": {
+        "left": 1066,
+        "top": 810
+      },
+      "size": {
+        "width": 100,
+        "height": 125
+      },
+      "packageId": "hermeto"
+    },
+    {
+      "id": "door-06",
+      "label": "6",
+      "filename": "doors/door-1120-58-right.webp",
+      "position": {
+        "left": 1120,
+        "top": 58
+      },
+      "size": {
+        "width": 100,
+        "height": 125
+      },
+      "direction": "right",
+      "packageId": "slits"
+    },
+    {
+      "id": "door-07",
+      "label": "7",
+      "filename": "doors/door-1362-934-right.webp",
+      "position": {
+        "left": 1362,
+        "top": 934
+      },
+      "size": {
+        "width": 100,
+        "height": 125
+      },
+      "direction": "right",
+      "packageId": "brushy"
+    },
+    {
+      "id": "door-08",
+      "label": "8",
+      "filename": "doors/door-1464-1226-right.webp",
+      "position": {
+        "left": 1464,
+        "top": 1226
+      },
+      "size": {
+        "width": 100,
+        "height": 125
+      },
+      "direction": "right",
+      "packageId": "brushy"
+    },
+    {
+      "id": "door-09",
+      "label": "9",
+      "filename": "doors/door-1528-628-right.webp",
+      "position": {
+        "left": 1528,
+        "top": 628
+      },
+      "size": {
+        "width": 100,
+        "height": 125
+      },
+      "direction": "right",
+      "packageId": "brushy"
+    },
+    {
+      "id": "door-10",
+      "label": "10",
+      "filename": "doors/door-1596-96.webp",
+      "position": {
+        "left": 1596,
+        "top": 96
+      },
+      "size": {
+        "width": 100,
+        "height": 125
+      },
+      "packageId": "brushy"
+    },
+    {
+      "id": "door-11",
+      "label": "11",
+      "filename": "doors/door-1704-96-right.webp",
+      "position": {
+        "left": 1704,
+        "top": 96
+      },
+      "size": {
+        "width": 100,
+        "height": 125
+      },
+      "direction": "right",
+      "packageId": "brushy"
+    },
+    {
+      "id": "door-12",
+      "label": "1",
+      "filename": "doors/door-1718-432.webp",
+      "position": {
+        "left": 1718,
+        "top": 432
+      },
+      "size": {
+        "width": 100,
+        "height": 125
+      },
+      "packageId": "brushy"
+    },
+    {
+      "id": "door-13",
+      "label": "13",
+      "filename": "doors/door-1942-1102.webp",
+      "position": {
+        "left": 1942,
+        "top": 1102
+      },
+      "size": {
+        "width": 100,
+        "height": 125
+      },
+      "packageId": "brushy"
+    },
+    {
+      "id": "door-14",
+      "label": "14",
+      "filename": "doors/door-1976-278.webp",
+      "position": {
+        "left": 1976,
+        "top": 278
+      },
+      "size": {
+        "width": 100,
+        "height": 125
+      },
+      "packageId": "brushy"
+    },
+    {
+      "id": "door-15",
+      "label": "15",
+      "filename": "doors/door-2054-1102-right.webp",
+      "position": {
+        "left": 2054,
+        "top": 1102
+      },
+      "size": {
+        "width": 100,
+        "height": 125
+      },
+      "direction": "right",
+      "packageId": "brushy"
+    },
+    {
+      "id": "door-16",
+      "label": "16",
+      "filename": "doors/door-2152-552-right.webp",
+      "position": {
+        "left": 2152,
+        "top": 552
+      },
+      "size": {
+        "width": 100,
+        "height": 125
+      },
+      "direction": "right",
+      "packageId": "brushy"
+    },
+    {
+      "id": "door-17",
+      "label": "17",
+      "filename": "doors/door-2174-754-right.webp",
+      "position": {
+        "left": 2174,
+        "top": 754
+      },
+      "size": {
+        "width": 100,
+        "height": 125
+      },
+      "direction": "right",
+      "packageId": "brushy"
+    },
+    {
+      "id": "door-18",
+      "label": "18",
+      "filename": "doors/door-434-572.webp",
+      "position": {
+        "left": 434,
+        "top": 572
+      },
+      "size": {
+        "width": 100,
+        "height": 125
+      },
+      "packageId": "brushy"
+    },
+    {
+      "id": "door-19",
+      "label": "19",
+      "filename": "doors/door-454-278.webp",
+      "position": {
+        "left": 454,
+        "top": 278
+      },
+      "size": {
+        "width": 100,
+        "height": 125
+      },
+      "packageId": "brushy"
+    },
+    {
+      "id": "door-20",
+      "label": "20",
+      "filename": "doors/door-558-806.webp",
+      "position": {
+        "left": 558,
+        "top": 806
+      },
+      "size": {
+        "width": 100,
+        "height": 125
+      },
+      "packageId": "brushy"
+    },
+    {
+      "id": "door-21",
+      "label": "21",
+      "filename": "doors/door-618-1034.webp",
+      "position": {
+        "left": 618,
+        "top": 1034
+      },
+      "size": {
+        "width": 100,
+        "height": 125
+      },
+      "packageId": "brushy"
+    },
+    {
+      "id": "door-22",
+      "label": "22",
+      "filename": "doors/door-744-534.webp",
+      "position": {
+        "left": 744,
+        "top": 534
+      },
+      "size": {
+        "width": 100,
+        "height": 125
+      },
+      "packageId": "brushy"
+    },
+    {
+      "id": "door-23",
+      "label": "23",
+      "filename": "doors/door-950-94.webp",
+      "position": {
+        "left": 950,
+        "top": 94
+      },
+      "size": {
+        "width": 100,
+        "height": 125
+      },
+      "packageId": "brushy"
+    },
+    {
+      "id": "door-24",
+      "label": "24",
+      "filename": "doors/door-986-370.webp",
+      "position": {
+        "left": 986,
+        "top": 370
+      },
+      "size": {
+        "width": 100,
+        "height": 125
+      },
+      "packageId": "brushy"
+    }
+  ],
+  "packages": {
+    "brushy": {
+      "thumbnail": "packages/brushy.webp",
+      "src": "https://www.youtube-nocookie.com/embed/E8H-67ILaqc?si=mfJU1ep32Vl4rkJc"
+    },
+    "zafiros": {
+      "thumbnail": "packages/zafiros.webp",
+      "src": "https://www.youtube-nocookie.com/embed/wFCG2TIEAjY?si=Jy5M3lL8-GAvA5Cu"
+    },
+    "jubilaires": {
+      "thumbnail": "packages/jubilaires.webp",
+      "src": "https://www.youtube-nocookie.com/embed/Xij0RcW6FTA?si=YAJH3iWpvpSpPbxv"
+    },
+    "hermeto": {
+      "thumbnail": "packages/hermeto.webp",
+      "src": "https://www.youtube-nocookie.com/embed/lZbfNtDCHdM?si=4GgT4YTJyb_gv4hI"
+    },
+    "slits": {
+      "thumbnail": "packages/slits.webp",
+      "src": "https://www.youtube-nocookie.com/embed/SqiFYcKEhxs?si=oMENwGGwQNR0yEd3"
+    },
+    "tempest": {
+      "thumbnail": "packages/tempest.webp",
+      "src": "https://www.youtube-nocookie.com/embed/aTDOFaAcEyc?si=0mY70JjhQnrrckW4"
+    }
+  },
+  "title": {
+    "audio": [
+      {
+        "name": "speaker-test",
+        "filename": "bells.mp3",
+        "volume": 0.2
+      }
+    ]
+  },
+  "audio": [
+    {
+      "name": "door",
+      "filename": "door-with-bells.mp3",
+      "volume": 0.2
+    },
+    {
+      "name": "wind",
+      "filename": "wind-fade.mp3",
+      "volume": 0.4
+    },
+    {
+      "name": "click",
+      "filename": "option-select.mp3",
+      "volume": 0.1
+    },
+    {
+      "name": "forbidden",
+      "filename": "forbidden.mp3",
+      "volume": 2.0
+    }
+  ],
+  "animations": [
+    {
+      "filenames": [
+        "animations/cat-01-a.png",
+        "animations/cat-01-b.png"
+      ],
+      "position": {
+        "left": 1200,
+        "top": 1200
+      },
+      "size": {
+        "width": 0,
+        "height": 7
+      },
+      "sequence": [
+        0,
+        0,
+        0,
+        0,
+        1,
+        1,
+        1,
+        1
+      ]
+    }
+  ]
+}

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" id="Outline" viewBox="0 0 24 24" width="512" height="512">
+  <!-- BR outward -->
+  <path d="M21,15H17A2,2,0,0,0,15,17v4a1,1,0,0,0,2,0V17h4A1,1,0,0,0,21,15Z"/>
+  <!-- BL outward -->
+  <path d="M3,15a1,1,0,0,0,0,2H7v4a1,1,0,0,0,2,0V17a2,2,0,0,0-2-2Z"/>
+  <!-- TR outward -->
+  <path d="M17,3a1,1,0,0,0-2,0V7a2,2,0,0,0,2,2h4a1,1,0,0,0,0-2H17Z"/>
+  <!-- TL outward -->
+  <path d="M9,3a1,1,0,0,0-2,0V7H3a1,1,0,0,0,0,2H7a2,2,0,0,0,2-2Z"/>
+</svg>
