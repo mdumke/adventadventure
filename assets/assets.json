@@ -23,7 +23,7 @@
         "width": 100,
         "height": 125
       },
-      "packageId": "brushy"
+      "packageId": "townes"
     },
     {
       "id": "door-02",
@@ -110,7 +110,7 @@
         "height": 125
       },
       "direction": "right",
-      "packageId": "brushy"
+      "packageId": "gabriel"
     },
     {
       "id": "door-08",
@@ -125,7 +125,7 @@
         "height": 125
       },
       "direction": "right",
-      "packageId": "brushy"
+      "packageId": "roots"
     },
     {
       "id": "door-09",
@@ -140,7 +140,7 @@
         "height": 125
       },
       "direction": "right",
-      "packageId": "brushy"
+      "packageId": "chemistry"
     },
     {
       "id": "door-10",
@@ -154,7 +154,7 @@
         "width": 100,
         "height": 125
       },
-      "packageId": "brushy"
+      "packageId": "tpain"
     },
     {
       "id": "door-11",
@@ -169,7 +169,7 @@
         "height": 125
       },
       "direction": "right",
-      "packageId": "brushy"
+      "packageId": "tom"
     },
     {
       "id": "door-12",
@@ -197,7 +197,7 @@
         "width": 100,
         "height": 125
       },
-      "packageId": "brushy"
+      "packageId": "stevie"
     },
     {
       "id": "door-14",
@@ -211,7 +211,7 @@
         "width": 100,
         "height": 125
       },
-      "packageId": "brushy"
+      "packageId": "elvis"
     },
     {
       "id": "door-15",
@@ -226,7 +226,7 @@
         "height": 125
       },
       "direction": "right",
-      "packageId": "brushy"
+      "packageId": "bjork"
     },
     {
       "id": "door-16",
@@ -241,7 +241,7 @@
         "height": 125
       },
       "direction": "right",
-      "packageId": "brushy"
+      "packageId": "modern"
     },
     {
       "id": "door-17",
@@ -256,7 +256,7 @@
         "height": 125
       },
       "direction": "right",
-      "packageId": "brushy"
+      "packageId": "ambitious"
     },
     {
       "id": "door-18",
@@ -270,7 +270,7 @@
         "width": 100,
         "height": 125
       },
-      "packageId": "brushy"
+      "packageId": "lupe"
     },
     {
       "id": "door-19",
@@ -284,7 +284,7 @@
         "width": 100,
         "height": 125
       },
-      "packageId": "brushy"
+      "packageId": "noname"
     },
     {
       "id": "door-20",
@@ -381,6 +381,58 @@
     "tempest": {
       "thumbnail": "packages/tempest.webp",
       "src": "https://www.youtube-nocookie.com/embed/aTDOFaAcEyc?si=0mY70JjhQnrrckW4"
+    },
+    "gabriel": {
+      "thumbnail": "packages/gabriel.webp",
+      "src": "https://www.youtube-nocookie.com/embed/ga5Bo4YdgH4?si=FAsw8AjeM4CXAZ1o"
+    },
+    "noname": {
+      "thumbnail": "packages/noname.webp",
+      "src": "https://www.youtube-nocookie.com/embed/K58JYXhb4YA?si=HQFMptE588M0K-HO"
+    },
+    "lupe": {
+      "thumbnail": "packages/lupe.webp",
+      "src": "https://www.youtube-nocookie.com/embed/LMZbLD97338?si=3zmU_DOLjyKdque9"
+    },
+    "roots": {
+      "thumbnail": "packages/roots.webp",
+      "src": "https://www.youtube-nocookie.com/embed/NDWgtB_MD24?si=hnErFdJaXKVDVcQv"
+    },
+    "chemistry": {
+      "thumbnail": "packages/chemistry.webp",
+      "src": "https://www.youtube-nocookie.com/embed/4knC--bW79A?si=dkeaGGzQ1zBx1AXa"
+    },
+    "tpain": {
+      "thumbnail": "packages/tpain.webp",
+      "src": "https://www.youtube-nocookie.com/embed/hzPICG7PO48?si=-fPQTldNt3nPgteg"
+    },
+    "tom": {
+      "thumbnail": "packages/tom.webp",
+      "src": "https://www.youtube-nocookie.com/embed/EznGGYQ-Tv8?si=EijN8aF4lkRR5-sB"
+    },
+    "townes": {
+      "thumbnail": "packages/townes.webp",
+      "src": "https://www.youtube-nocookie.com/embed/v-Rq-4spRz4?si=UGSLGh3-7cWCJGN2"
+    },
+    "stevie": {
+      "thumbnail": "packages/stevie.webp",
+      "src": "https://www.youtube-nocookie.com/embed/lBSx9UhkL9Y?si=ypuYEOmQMGe4sALK"
+    },
+    "elvis": {
+      "thumbnail": "packages/elvis.webp",
+      "src": "https://www.youtube-nocookie.com/embed/yis1oa6Cri4?si=PjNG4BzWJKasLKVx"
+    },
+    "bjork": {
+      "thumbnail": "packages/bjork.webp",
+      "src": "https://www.youtube-nocookie.com/embed/V-58I81gySE?si=AH0qgjg6XNtHB8qk"
+    },
+    "modern": {
+      "thumbnail": "packages/modern.webp",
+      "src": "https://www.youtube-nocookie.com/embed/blJldvAPwpQ?si=QSvGxE9h0BCuCrpg"
+    },
+    "ambitious": {
+      "thumbnail": "packages/ambitious.webp",
+      "src": "https://www.youtube-nocookie.com/embed/DUQk-EBoFjY?si=R6GFSVj-QnJj_emv"
     }
   },
   "audio": [
