@@ -30,10 +30,11 @@
 - [x] ensure timezone / day switch works
 - [x] support opening to right
 - [x] create 24 doors
+- [x] gh pages deployment
+- [x] icons for title buttons
+- [ ] remove sound check
 - [ ] build a title page
 - [ ] add full ambient soundscape
-- [ ] cache by rendering full images hidden
-- [ ] icons for title buttons
 - [ ] put placeholder image in media player (w/shadow)
 - [ ] js-disabled message
 - [ ] door 24 with credits, greetings and full image
@@ -45,6 +46,7 @@
 ## backlog
 
 - [ ] hide snowflakes behind clouds layer
+- [ ] cache by rendering full images hidden
 - [ ] add navigation indicators to pan container
 - [ ] move css for title state into html
 - [ ] do we still need the preload?
@@ -55,6 +57,7 @@
 - [ ] HTTP 2
 - [ ] strategy for contact / copyright / cookies
 - [ ] fade master gain on cancel
+- [ ] glow behind active unopened doors
 
 ## production
 
@@ -119,8 +122,7 @@
 - [x] title page
 - [x] keep fullscreen button? yes
 - [x] keep audio button? yes
-- [ ] name / domain -> gerne, titel überlegen
-- [ ] yt adds
+- [x] yt adds
   - werden gezeigt, wenn der channel monetarisiert
   - entweder in eigenen channel
   - oder sowas wie vimeo
@@ -129,5 +131,6 @@
 - [ ] descriptions / title for videos (?)
   - in media player or on door-inside
 - [ ] who found the video (?)
-- [ ] glow behind active unopened doors (?)
-- [ ] info door?
+- [ ] info door (?)
+- [ ] xmasmisfits.de (?)
+- [ ] titles for vidoes in player (?)

@@ -19,7 +19,7 @@ template.innerHTML = `
 
     <div id="door-frame" class="door-frame">
       <div class="label-container" part="label-container">
-        <div id="label-text"></div>
+        <div id="label-text" class="label-text"></div>
       </div>
     </div>
   </main>

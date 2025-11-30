@@ -83,7 +83,8 @@ class AssetLoader {
       this._assetMapping.background.filename,
       ...this._assetMapping.doors.map(door => door.filename),
       ...this._assetMapping.ui,
-      ...this._assetMapping.animations.flatMap(({ filenames }) => filenames)
+      ...this._assetMapping.animations.flatMap(({ filenames }) => filenames),
+      ...this.doorNumbers()
     ]
 
     const audioFiles = this._assetMapping.audio
@@ -105,6 +106,15 @@ class AssetLoader {
         this.onProgress(count, total)
       })
     )
+  }
+
+  doorNumbers () {
+    const numbers = []
+
+    for (let i = 1; i <= 24; i++) {
+      numbers.push(`door-numbers/${i.toString()}.webp`)
+    }
+    return numbers
   }
 
   onProgress (loaded, total) {

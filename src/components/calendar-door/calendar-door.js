@@ -98,9 +98,10 @@ class CalendarDoor extends HTMLElement {
     this.style.top = `${top}px`
     this.style.left = `${left}px`
 
-    const imgSrc = this.config.filename
-    this.$doorFrame.style.backgroundImage = `url('images/${imgSrc}')`
-    this.$doorLabel.textContent = this.config.label
+    const frameUrl = `images/${this.config.filename}`
+    const labelUrl = `images/door-numbers/${this.config.label}.webp`
+    this.$doorFrame.style.backgroundImage = `url(${frameUrl})`
+    this.$doorLabel.style.backgroundImage = `url(${labelUrl})`
   }
 
   updatePackage () {

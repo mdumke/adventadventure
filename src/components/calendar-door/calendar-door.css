@@ -44,17 +44,15 @@ main {
 }
 
 .label-container {
-  background-color: rgba(255, 255, 255, 1);
-  color: #333;
-  border-radius: 50%;
-  border: 3px solid #222;
-  width: 46px;
-  font-size: 30px;
   aspect-ratio: 1 / 1;
   display: flex;
   align-items: center;
   justify-content: center;
-  line-height: 1;
+
+  .label-text {
+    width: 52px;
+    height: 52px;
+  }
 }
 
 .content-wrapper {

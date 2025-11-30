@@ -33,44 +33,6 @@ class Timer {
       })
     )
   }
-
-  /*
-    run = (time: number) => {
-    this.ref = requestAnimationFrame(this.run)
-    if (this.prevTime > 0) {
-      this.callback && this.callback(time - this.prevTime)
-    }
-    this.prevTime = time
-  }
-
-
-    every (ms: number, iterations: number, cb: DeltaTimeCallback) {
-    return new Promise<void>(resolve => {
-      if (this.callback) {
-        throw new Error('timer is already running')
-      }
-
-      let time = 0
-      let i = 0
-
-      this.callback = dt => {
-        time += dt
-
-        if (time >= ms) {
-          cb(time)
-          time %= ms
-          i++
-        }
-
-        if (iterations > 0 && i >= iterations) {
-          this.stop()
-          resolve()
-        }
-      }
-
-      this.run(this.prevTime)
-    })
-      */
 }
 
 export const timer = new Timer()
