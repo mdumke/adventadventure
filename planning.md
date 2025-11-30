@@ -32,7 +32,7 @@
 - [x] create 24 doors
 - [x] gh pages deployment
 - [x] icons for title buttons
-- [ ] remove sound check
+- [x] remove sound check
 - [ ] build a title page
 - [ ] add full ambient soundscape
 - [ ] put placeholder image in media player (w/shadow)
