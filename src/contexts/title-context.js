@@ -12,7 +12,6 @@ export class TitleContext {
 
   enter () {
     this.$startBtn = ui.selectElement('#start-button')
-    this.$buttons = ui.selectElement('#interaction-area')
     this.$progressBar = ui.selectElement('#progress-bar')
     assetLoader.registerProgressCallback(this.key, this.onLoadingProgress)
     assetLoader.run()
@@ -45,7 +44,7 @@ export class TitleContext {
   }
 
   waitForPreload = () => {
-    this.$buttons.classList.add('hide')
+    this.$startBtn.classList.add('hide')
     this.$progressBar.classList.remove('hide')
     this.autoSwitch = true
 

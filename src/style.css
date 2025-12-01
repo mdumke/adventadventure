@@ -63,47 +63,69 @@ html {
 .title-screen {
   z-index: 1;
   color: #333;
-  background-color: #fff;
+  background-color: #666;
   font-size: 16px;
   text-align: center;
 
   .title-content {
+    height: 100%;
+    max-height: 700px;
+    padding: 40px 0 100px 0;
     display: flex;
     flex-direction: column;
     align-items: center;
-    min-height: 300px;
     justify-content: space-between;
-  }
 
-  .interaction-area {
-    width: 100%;
-    display: flex;
-    flex-direction: row;
-    justify-content: right;
+    .title-image {
+      margin-bottom: 30px;
+    }
 
-    .start-button {
-      border: none;
-      background-color: transparent;
-      cursor: pointer;
+    .title-angel-bob {
+      align-self: self-start;
+      display: inline-block;
       will-change: transform;
+      animation: angel-bob 2s ease-in-out infinite;
+    }
 
-      &:active {
-        transform: scale(0.9);
-        transform: translate(2px, 2px);
+    .title-angel {
+      display: inline-block;
+      transform-origin: center;
+      will-change: transform;
+      animation: angel-walk 6s linear infinite;
+      width: 80%;
+    }
+
+    .interaction-area {
+      width: 100%;
+      display: flex;
+      flex-direction: row;
+      justify-content: right;
+
+      .start-button {
+        border: none;
+        background-color: transparent;
+        cursor: pointer;
+        will-change: transform;
+
+        &:active {
+          transform: scale(0.9);
+          transform: translate(2px, 2px);
+        }
       }
     }
-  }
 
-  .progress-bar {
-    max-width: 250px;
-    height: 8px;
-    border: 1px solid #222;
-    border-radius: 8px;
-
-    &::part(bar) {
-      background-color: #000000;
-      transition: width 1.2s ease;
+    .progress-bar {
+      max-width: 250px;
+      height: 18px;
+      background-color: #fefefe;
+      border: 4px solid #222;
       border-radius: 8px;
+
+      &::part(bar) {
+        background-color: #ed6e68;
+        transition: width 1.2s ease;
+        border-radius: 8px;
+      }
     }
   }
 }
@@ -142,5 +164,41 @@ fullscreen-toggle {
   &:active {
     transform: scale(0.9);
     box-shadow: 0 1px 3px rgba(0, 0, 0, 0.35);
+  }
+}
+
+@keyframes angel-walk {
+  0% {
+    transform: translateX(0) scaleX(1);
+  }
+  49.999% {
+    transform: translateX(120px) scaleX(1);
+  }
+  50% {
+    transform: translateX(120px) scaleX(-1);
+  }
+  99.999% {
+    transform: translateX(0) scaleX(-1);
+  }
+  100% {
+    transform: translateX(0) scaleX(1);
+  }
+}
+
+@keyframes angel-bob {
+  0% {
+    transform: translateY(0);
+  }
+  25% {
+    transform: translateY(-2px);
+  }
+  50% {
+    transform: translateY(0);
+  }
+  75% {
+    transform: translateY(2px);
+  }
+  100% {
+    transform: translateY(0);
   }
 }

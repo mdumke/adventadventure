@@ -7,6 +7,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [0.7.0] - unreleased
 
+### Added
+
+- Title page with drawn images
+
 ### Changed
 
 - Use hand-drawn label images

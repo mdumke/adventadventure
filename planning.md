@@ -34,14 +34,11 @@
 - [x] icons for title buttons
 - [x] remove sound check
 - [x] use start image in title screen
+- [x] build a title page
 - [ ] show video titles
-- [ ] build a title page
 - [ ] add full ambient soundscape
-- [ ] put placeholder image in media player (w/shadow)
 - [ ] js-disabled message
-- [ ] door 24 with credits, greetings and full image
 - [ ] moving clouds
-- [ ] load thumbnails before opening calendar
 - [ ] error handling
 - [ ] audio: loudness adjustments
 
@@ -50,6 +47,9 @@
 - [ ] hide snowflakes behind clouds layer
 - [ ] cache by rendering full images hidden
 - [ ] add navigation indicators to pan container
+- [ ] door 24 with credits, greetings and full image
+- [ ] put placeholder image in media player (w/shadow)
+- [ ] load thumbnails before opening calendar
 - [ ] move css for title state into html
 - [ ] do we still need the preload?
 - [ ] create a PWA
