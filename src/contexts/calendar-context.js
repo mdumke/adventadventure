@@ -22,6 +22,7 @@ export class CalendarContext {
     this.walkY = 0
     this.maxX = 2560
     this.maxY = 1440
+    this.borderSize = 50
     this.dragging = false
   }
 
@@ -153,12 +154,18 @@ export class CalendarContext {
 
   shift (dx, dy) {
     const frameWidth = this.$frame.clientWidth || window.innerWidth
-    this.walkX = Math.min(dx, -this.dx)
-    this.walkX = Math.max(this.walkX, frameWidth - this.maxX - this.dx)
+    this.walkX = Math.min(dx, -this.dx + this.borderSize)
+    this.walkX = Math.max(
+      this.walkX,
+      frameWidth - this.borderSize - this.maxX - this.dx
+    )
 
     const frameHeight = this.$frame.clientHeight || window.innerHeight
-    this.walkY = Math.min(dy, -this.dy)
-    this.walkY = Math.max(this.walkY, frameHeight - this.maxY - this.dy)
+    this.walkY = Math.min(dy, -this.dy + this.borderSize)
+    this.walkY = Math.max(
+      this.walkY,
+      frameHeight - this.borderSize - this.maxY - this.dy
+    )
 
     const offsetX = this.dx + this.walkX
     const offsetY = this.dy + this.walkY
