@@ -36,8 +36,10 @@
 - [x] use start image in title screen
 - [x] build a title page
 - [x] include animations
-- [ ] favicon
+- [x] favicon
 - [x] engel animation
+- [ ] prepare all doors
+- [ ] hover mouse
 - [ ] add full ambient soundscape
 
 ## backlog
