@@ -1,6 +1,6 @@
 {
   "background": {
-    "filename": "background-v05-90p.webp",
+    "filename": "background-v06-90p.webp",
     "width": 2560,
     "height": 1440
   },
@@ -246,10 +246,10 @@
     {
       "id": "door-17",
       "label": "17",
-      "filename": "doors/door-2174-754-right.webp",
+      "filename": "doors/door-1902-772-right.webp",
       "position": {
-        "left": 2174,
-        "top": 754
+        "left": 1902,
+        "top": 772
       },
       "size": {
         "width": 100,
@@ -460,16 +460,88 @@
   "animations": [
     {
       "filenames": [
-        "animations/cat-01-a.png",
-        "animations/cat-01-b.png"
+        "animations/cat-a.webp",
+        "animations/cat-b.webp"
       ],
       "position": {
-        "left": 1200,
-        "top": 1200
+        "left": 2206,
+        "top": 338
       },
       "size": {
-        "width": 0,
-        "height": 7
+        "width": 356,
+        "height": 636
+      },
+      "sequence": [
+        0,
+        0,
+        0,
+        0,
+        1,
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "filenames": [
+        "animations/troll-a.webp",
+        "animations/troll-b.webp"
+      ],
+      "position": {
+        "left": 10,
+        "top": 608
+      },
+      "size": {
+        "width": 364,
+        "height": 232
+      },
+      "sequence": [
+        0,
+        0,
+        0,
+        0,
+        1,
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "filenames": [
+        "animations/dog-a.webp",
+        "animations/dog-b.webp"
+      ],
+      "position": {
+        "left": 838,
+        "top": 960
+      },
+      "size": {
+        "width": 628,
+        "height": 476
+      },
+      "sequence": [
+        0,
+        0,
+        0,
+        0,
+        1,
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "filenames": [
+        "animations/pig-a.webp",
+        "animations/pig-b.webp"
+      ],
+      "position": {
+        "left": 2020,
+        "top": 878
+      },
+      "size": {
+        "width": 230,
+        "height": 212
       },
       "sequence": [
         0,

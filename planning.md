@@ -35,6 +35,7 @@
 - [x] remove sound check
 - [x] use start image in title screen
 - [x] build a title page
+- [x] include animations
 - [ ] show video titles
 - [ ] add full ambient soundscape
 - [ ] js-disabled message
