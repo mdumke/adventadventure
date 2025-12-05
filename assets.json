@@ -169,7 +169,7 @@
         "height": 125
       },
       "direction": "right",
-      "packageId": "cem"
+      "packageId": "joshua"
     },
     {
       "id": "door-01",
@@ -453,6 +453,10 @@
     "lehrer": {
       "thumbnail": "packages/lehrer.webp",
       "src": "https://www.youtube-nocookie.com/embed/JPrAuF2f_oI?si=ZRzOUTl92znSQ3Rm"
+    },
+    "joshua": {
+      "thumbnail": "packages/joshua.webp",
+      "src": "https://www.youtube-nocookie.com/embed/PS9Bc_GQBEs?si=0IEGlI25MsMwEwGw"
     }
   },
   "audio": [
