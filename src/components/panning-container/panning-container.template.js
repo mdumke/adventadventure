@@ -1,4 +1,4 @@
-import * as css from 'bundle-text:./scroll-container.css'
+import * as css from 'bundle-text:./panning-container.css'
 
 export const template = document.createElement('template')
 

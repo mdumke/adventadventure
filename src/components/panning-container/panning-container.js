@@ -3,17 +3,17 @@
  *
  */
 
-import { template } from './scroll-container.template'
+import { template } from './panning-container.template'
 
 /**
- * @element scroll-container
+ * @element panning-container
  * @summary Container web component that allows panning of its content area.
  *
  * @fires pan-start - Fired when a pan operation starts.
  * @fires pan-update - Fired when the pan position is updated.
  * @fires pan-end - Fired when a pan operation ends.
  */
-class ScrollContainer extends HTMLElement {
+class PanningContainer extends HTMLElement {
   constructor () {
     super()
     this.attachShadow({ mode: 'open' })
@@ -256,6 +256,6 @@ class ScrollContainer extends HTMLElement {
   }
 }
 
-if (!customElements.get('scroll-container')) {
-  customElements.define('scroll-container', ScrollContainer)
+if (!customElements.get('panning-container')) {
+  customElements.define('panning-container', PanningContainer)
 }
