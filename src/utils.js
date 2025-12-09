@@ -17,7 +17,12 @@ export const allowOpen = doorLabel => {
 export const debug = message => {
   const $debug = document.getElementById('debug')
   if ($debug) {
-    $debug.textContent = message
+    const prevText = $debug.textContent
+    if (prevText) {
+      $debug.textContent = `${prevText}\n${message}`
+    } else {
+      $debug.textContent = message
+    }
   } else {
     console.log('[Debug]', message)
   }

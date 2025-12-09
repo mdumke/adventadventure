@@ -37,15 +37,38 @@
 - [x] build a title page
 - [x] include animations
 - [x] favicon
-- [x] engel animation
-- [ ] prepare all doors
-- [ ] hover mouse
-- [ ] add full ambient soundscape
+- [x] angel animation
+- [x] prepare all doors
+
+## bugs
+
+- [x] remove active flag after usage
+- [x] allow progress bar an initial transition
+- [x] provide fallback if thumnails not yet loaded
+- [x] fix flickering before calendar rendering
+- [x] reveal calendar without flickering even on re-focussing tab
+- [x] show content thumbnails while curtain is lifting
+- [x] don't play obsolete sound effects after audio resume
+- [x] await package loading before starting animations
+- [x] fix disallowed audio context start message
+- [x] ambience is back on after re-focus, even if off before
+- [x] ipad cannot pan vertically!
+- [ ] ambience sound plays over video after tab refocus
+- [ ] full screen exited after refocus, but wrong icon
+
+## refactorings
+
+- [ ] use calendar class to keep track of doors
+- [ ] move css button:active styling into the toggles
+- [ ] build clean panning web component
 
 ## backlog
 
+- [ ] integrate native scrolling behavior
 - [ ] hide snowflakes behind clouds layer
 - [ ] cache by rendering full images hidden
+- [ ] hover mouse
+- [ ] add full ambient soundscape
 - [ ] error handling
 - [ ] audio: loudness adjustments
 - [ ] js-disabled message
@@ -61,7 +84,6 @@
 - [ ] create a PWA
 - [ ] load different images depending on resolution
 - [ ] estimate network connection speed
-- [ ] find a more appropriate font
 - [ ] HTTP 2
 - [ ] strategy for contact / copyright / cookies
 - [ ] fade master gain on cancel
@@ -70,26 +92,7 @@
 ## production
 
 - [x] get a domain
-- [ ] disable opening doors in november
-
-## bugs
-
-- [x] remove active flag after usage
-- [x] allow progress bar an initial transition
-- [x] provide fallback if thumnails not yet loaded
-- [x] fix flickering before calendar rendering
-- [x] reveal calendar without flickering even on re-focussing tab
-- [x] show content thumbnails while curtain is lifting
-- [x] don't play obsolete sound effects after audio resume
-- [x] await package loading before starting animations
-- [x] fix disallowed audio context start message
-- [x] ambience is back on after re-focus, even if off before
-- [x] ipad cannot pan vertically!
-
-## refactorings
-
-- [ ] use calendar class to keep track of doors
-- [ ] move css button:active styling into the toggles
+- [x] disable opening doors in november
 
 ## assets
 
@@ -135,9 +138,4 @@
   - werden gezeigt, wenn der channel monetarisiert
   - entweder in eigenen channel
   - oder sowas wie vimeo
-- [x] xmasmisfits.netlify.app
-- [ ] sound effects and ambience recordings
-- [ ] texte / rundschreiben
-- [ ] descriptions / title for videos (?)
-  - in media player or on door-inside
-- [ ] info door (?)
+- [x] adventadventure.netlify.app

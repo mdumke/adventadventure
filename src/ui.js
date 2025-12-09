@@ -1,6 +1,6 @@
 import { audioPlayer } from './audio-player.js'
 import { assetLoader } from './asset-loader.js'
-import { loadLastPosition } from './storage.js'
+
 class UI {
   $app = null
   $animations = []
@@ -20,15 +20,6 @@ class UI {
     await this.renderBackground($snow, $calendar, assets)
     this.renderDoors($calendar, assets)
     this.renderAnimations($calendar, assets)
-  }
-
-  restoreLastPosition () {
-    const pos = loadLastPosition()
-    if (pos) {
-      this.selectElement('#pan-container').scrollToPosition(pos)
-    } else {
-      this.selectElement('#pan-container').scrollToInitial()
-    }
   }
 
   async renderBackground ($snow, $calendar, { background }) {

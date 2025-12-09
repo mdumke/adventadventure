@@ -152,25 +152,6 @@ html {
   }
 }
 
-.panic-container {
-  background-color: #000;
-  width: 100vw;
-  height: 100vh;
-  overflow: hidden;
-  position: relative;
-  touch-action: none;
-}
-
-.pan-content {
-  position: absolute;
-  left: 0;
-  top: 0;
-  will-change: transform;
-  user-select: none;
-  -webkit-user-drag: none;
-  cursor: pointer;
-}
-
 snow-overlay {
   position: relative;
 
@@ -190,10 +171,12 @@ snow-overlay {
   z-index: 0;
 }
 
-.pan-container {
-  flex: 1 1 0;
-  width: 100%;
-  height: 100%;
+.calendar-panner {
+  width: 100vw;
+  height: 100vh;
+
+  --padding: 50px;
+  --background-color: #000;
 }
 
 blur-overlay {

@@ -5,7 +5,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="referrer" content="no-referrer-when-downgrade">
-  <title>xmasmisfits</title>
+  <title>adventadventure</title>
 
   <link rel="icon" type="image/png" sizes="16x16" href="../assets/images/favicon.ico">
 
@@ -20,7 +20,7 @@
         <div class="title-content-wrapper">
           <div class="title-content">
 
-            <img src="../assets/images/start-screen/title-v3.webp" alt="Xmas Misfits" class="title-image" />
+            <img src="../assets/images/start-screen/title-v3.webp" alt="Advent Adventure" class="title-image" />
 
             <div class="title-angel-bob">
               <img src="../assets/images/start-screen/angel.webp" alt="christmas angel" class="title-angel" />
@@ -41,16 +41,13 @@
         <audio-toggle on></audio-toggle>
         <fullscreen-toggle></fullscreen-toggle>
         <blur-overlay></blur-overlay>
-        <div id="panic-container" class="panic-container">
-          <div class="pan-content">
-            <snow-overlay id="snow-overlay">
-              <div id="calendar" class="calendar"></div>
-              <img src="../assets/images/animations/witch.webp" alt="witch" class="witch" />
-            </snow-overlay>
-          </div>"
-        </div>
+        <panning-container id="calendar-panner" class="calendar-panner">
+          <snow-overlay id="snow-overlay">
+            <div id="calendar" class="calendar"></div>
+            <img src="../assets/images/animations/witch.webp" alt="witch" class="witch" />
+          </snow-overlay>
+        </panning-container>
       </div>
-
     </div>
   </div>
 
