@@ -25,6 +25,7 @@ class ScrollContainer extends HTMLElement {
     this.currentX = 0
     this.currentY = 0
     this._dragging = false
+    this._maybeDragging = false
     this._startClientX = 0
     this._startClientY = 0
     this._startX = 0
@@ -41,6 +42,15 @@ class ScrollContainer extends HTMLElement {
 
     // resize observer
     this._ro = null
+
+    // tap vs drag threshold (in pixels)
+    this._dragThreshold = 6
+
+    // pointer tracking
+    this._activePointerId = null
+
+    // suppress click after drag
+    this._suppressNextClick = false
   }
 
   connectedCallback () {
@@ -70,30 +80,41 @@ class ScrollContainer extends HTMLElement {
   _onPointerDown = e => {
     if (e.button && e.button !== 0) return // Only left button
 
-    this._dragging = true
+    // mark potential drag start
+    this._maybeDragging = true
+    this._activePointerId = e.pointerId
+
+    // record initial coordinates
     this._startClientX = e.clientX
     this._startClientY = e.clientY
     this._startX = this.currentX
     this._startY = this.currentY
-    this.$viewport.setPointerCapture(e.pointerId)
 
     window.addEventListener('pointerup', this._onPointerUp)
     window.addEventListener('pointercancel', this._onPointerUp)
     window.addEventListener('pointermove', this._onPointerMove, {
       passive: false
     })
-
-    this._emitEvent('pan-start', { x: this.currentX, y: this.currentY })
   }
 
   _onPointerUp = e => {
-    if (!this._dragging) return
+    this._maybeDragging = false
+    this._activePointerId = null
 
+    if (this._dragging) {
+      this._stopDragging(e.pointerId)
+    }
+  }
+
+  _stopDragging (pointerId) {
     this._dragging = false
-    this.$viewport.releasePointerCapture?.(e.pointerId)
+
+    this.$viewport.releasePointerCapture?.(pointerId)
     window.removeEventListener('pointermove', this._onPointerMove)
     window.removeEventListener('pointerup', this._onPointerUp)
     window.removeEventListener('pointercancel', this._onPointerUp)
+
+    this._supressSyntheticClick()
 
     if (this._frameRequested) {
       this._flushFrame()
@@ -103,8 +124,33 @@ class ScrollContainer extends HTMLElement {
   }
 
   _onPointerMove = e => {
-    if (!this._dragging) return
+    if (!this._dragging) {
+      if (!this._maybeDragging) return
+      if (!this._sufficientDistance(e)) return
 
+      this._startDragging()
+    }
+
+    this._drag(e)
+  }
+
+  _sufficientDistance (e) {
+    const dx = e.clientX - this._startClientX
+    const dy = e.clientY - this._startClientY
+    const dist = Math.hypot(dx, dy)
+    return dist >= this._dragThreshold
+  }
+
+  _startDragging () {
+    this.$viewport.setPointerCapture(this._activePointerId)
+
+    this._maybeDragging = false
+    this._dragging = true
+
+    this._emitEvent('pan-start', { x: this.currentX, y: this.currentY })
+  }
+
+  _drag (e) {
     e.preventDefault() // prevent selection/scroll while dragging
 
     const dx = e.clientX - this._startClientX
@@ -120,8 +166,6 @@ class ScrollContainer extends HTMLElement {
       this._frameRequested = true
       requestAnimationFrame(() => this._flushFrame())
     }
-
-    this._emitEvent('pan-update', { x: this._pendingX, y: this._pendingY })
   }
 
   _flushFrame () {
@@ -137,6 +181,7 @@ class ScrollContainer extends HTMLElement {
     this.currentX = x
     this.currentY = y
     this.$contentArea.style.transform = `translate3d(${x}px, ${y}px, 0)`
+    this._emitEvent('pan-update', { x, y })
   }
 
   _clampX (x) {
@@ -173,6 +218,20 @@ class ScrollContainer extends HTMLElement {
     }
   }
 
+  _supressSyntheticClick () {
+    this._suppressNextClick = true
+    setTimeout(() => {
+      this._suppressNextClick = false
+    }, 0)
+  }
+
+  _onClickCapture = e => {
+    if (this._suppressNextClick) {
+      e.stopImmediatePropagation()
+      e.preventDefault()
+    }
+  }
+
   _emitEvent (name, detail = {}) {
     this.dispatchEvent(
       new CustomEvent(name, {
@@ -185,10 +244,12 @@ class ScrollContainer extends HTMLElement {
 
   _registerListeners () {
     this.$viewport.addEventListener('pointerdown', this._onPointerDown)
+    this.addEventListener('click', this._onClickCapture, true)
   }
 
   _removeListeners () {
     this.$viewport.removeEventListener('pointerdown', this._onPointerDown)
+    this.removeEventListener('click', this._onClickCapture, true)
     window.removeEventListener('pointermove', this._onPointerMove)
     window.removeEventListener('pointerup', this._onPointerUp)
     window.removeEventListener('pointercancel', this._onPointerUp)
