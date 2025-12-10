@@ -54,9 +54,9 @@
 - [x] fix disallowed audio context start message
 - [x] ambience is back on after re-focus, even if off before
 - [x] ipad cannot pan vertically!
+- [x] snow flakes faster when dragging (introduce dt)
 - [ ] ambience sound plays over video after tab refocus
 - [ ] full screen exited after refocus, but wrong icon
-- [ ] snow flakes faster when dragging (introduce dt)
 
 ## refactorings
 
