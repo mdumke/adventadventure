@@ -52,6 +52,16 @@ class PannableContainer extends HTMLElement {
 
     // suppress click after drag
     this._suppressNextClick = false
+
+    // velocity tracking
+    this._lastMoveTime = 0
+    this._lastX = 0
+    this._lastY = 0
+    this._velocityX = 0
+    this._velocityY = 0
+    this._maxVelocityX = 0.8
+    this._maxVelocityY = 0.8
+    this._friction = 0.003
   }
 
   connectedCallback () {
@@ -93,6 +103,11 @@ class PannableContainer extends HTMLElement {
     this._startX = this.currentX
     this._startY = this.currentY
 
+    // cancel inertia
+    this._cancelFrame()
+    this._velocityX = 0
+    this._velocityY = 0
+
     window.addEventListener('pointerup', this._onPointerUp)
     window.addEventListener('pointercancel', this._onPointerUp)
     window.addEventListener('pointermove', this._onPointerMove)
@@ -117,6 +132,10 @@ class PannableContainer extends HTMLElement {
     }
 
     this._emitEvent('pan-end', { x: this.currentX, y: this.currentY })
+
+    if (Math.abs(this._velocityX) > 0 || Math.abs(this._velocityY) > 0) {
+      this._startInertia()
+    }
   }
 
   _onPointerMove = e => {
@@ -155,6 +174,11 @@ class PannableContainer extends HTMLElement {
     this._maybeDragging = false
     this._dragging = true
 
+    // prepare velocity tracking
+    this._lastMoveTime = 0
+    this._velocityX = 0
+    this._velocityY = 0
+
     this._emitEvent('pan-start', { x: this.currentX, y: this.currentY })
   }
 
@@ -174,6 +198,8 @@ class PannableContainer extends HTMLElement {
       this._frameRequested = true
       this._rafId = requestAnimationFrame(() => this._flushFrame())
     }
+
+    this._updateVelocity()
   }
 
   _flushFrame () {
@@ -194,12 +220,94 @@ class PannableContainer extends HTMLElement {
     this._emitEvent('pan-update', { x, y })
   }
 
+  _updateVelocity () {
+    const now = performance.now()
+
+    if (this._lastMoveTime !== 0) {
+      const dt = now - this._lastMoveTime
+      if (dt > 0) {
+        this._velocityX = (this._pendingX - this._lastX) / dt
+        this._velocityY = (this._pendingY - this._lastY) / dt
+
+        this._velocityX = this._clampVelocityX(this._velocityX)
+        this._velocityY = this._clampVelocityY(this._velocityY)
+      }
+    }
+
+    this._lastMoveTime = now
+    this._lastX = this._pendingX
+    this._lastY = this._pendingY
+  }
+
+  _startInertia () {
+    // cancel any running inertia frame
+    this._cancelFrame()
+
+    if (this._velocityX === 0 && this._velocityY === 0) return
+
+    const minVelocity = 0.03 // minimum velocity in px/ms
+
+    let lastTime = performance.now()
+
+    const step = now => {
+      // compute delta time in ms
+      // cap to avoid huge leaps if tab was in background
+      let dt = Math.min(now - lastTime, 50)
+      lastTime = now
+      if (dt <= 0) {
+        this._rafId = requestAnimationFrame(step)
+        return
+      }
+
+      // exponential decay factor for this frame (frame-time aware)
+      const decay = Math.exp(-this._friction * dt)
+      this._velocityX *= decay
+      this._velocityY *= decay
+
+      // velocities are px per ms, dt is ms
+      const nextX = this.currentX + this._velocityX * dt
+      const nextY = this.currentY + this._velocityY * dt
+
+      const clampedX = this._clampX(nextX)
+      const clampedY = this._clampY(nextY)
+
+      this._applyTransform(clampedX, clampedY)
+
+      // om a boundary, zero velocity on that axis so it doesn't fight the clamp
+      if (clampedX !== nextX) this._velocityX = 0
+      if (clampedY !== nextY) this._velocityY = 0
+
+      // stop when both velocity components are under threshold
+      if (
+        Math.abs(this._velocityX) <= minVelocity &&
+        Math.abs(this._velocityY) <= minVelocity
+      ) {
+        this._velocityX = 0
+        this._velocityY = 0
+        this._rafId = null
+        return
+      }
+
+      this._rafId = requestAnimationFrame(step)
+    }
+
+    this._rafId = requestAnimationFrame(step)
+  }
+
   _clampX (x) {
     return Math.max(-this._maxX, Math.min(0, x))
   }
 
   _clampY (y) {
     return Math.max(-this._maxY, Math.min(0, y))
+  }
+
+  _clampVelocityX (vx) {
+    return Math.max(-this._maxVelocityX, Math.min(this._maxVelocityX, vx))
+  }
+
+  _clampVelocityY (vy) {
+    return Math.max(-this._maxVelocityY, Math.min(this._maxVelocityY, vy))
   }
 
   _resize = () => {

@@ -39,6 +39,7 @@
 - [x] favicon
 - [x] angel animation
 - [x] prepare all doors
+- [x] add inertia to panning
 
 ## bugs
 
@@ -55,6 +56,7 @@
 - [x] ipad cannot pan vertically!
 - [ ] ambience sound plays over video after tab refocus
 - [ ] full screen exited after refocus, but wrong icon
+- [ ] snow flakes faster when dragging (introduce dt)
 
 ## refactorings
 
