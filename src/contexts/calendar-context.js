@@ -15,7 +15,7 @@ export class CalendarContext {
     this.player = ui.selectElement('#media-player')
     this.$panningContainer = ui.selectElement('#calendar-panner')
     this.$calendar = ui.selectElement('#calendar')
-    await this.setStartPosition(1180, 170)
+    await this.setStartPosition(-1200, -250)
     this.registerListeners()
     this.prepareContentPackages()
     this.startAnimationTimer()

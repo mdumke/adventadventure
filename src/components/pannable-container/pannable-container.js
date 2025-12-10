@@ -36,6 +36,7 @@ class PannableContainer extends HTMLElement {
     this._maxY = 0
 
     // animation frame
+    this._rafId = null
     this._frameRequested = false
     this._pendingX = 0
     this._pendingY = 0
@@ -71,18 +72,20 @@ class PannableContainer extends HTMLElement {
   }
 
   panTo (x, y) {
-    const clampedX = this._clampX(-x)
-    const clampedY = this._clampY(-y)
+    const clampedX = this._clampX(x)
+    const clampedY = this._clampY(y)
     this._applyTransform(clampedX, clampedY)
     this._emitEvent('pan-update', { x: clampedX, y: clampedY })
   }
 
   _onPointerDown = e => {
-    if (e.button && e.button !== 0) return // Only left button
+    if (!this._isLeftButtonEvent(e)) return
+    if (this._isValidPointerEvent(e)) return
 
     // mark potential drag start
     this._maybeDragging = true
     this._activePointerId = e.pointerId
+    this._suppressNextClick = false
 
     // record initial coordinates
     this._startClientX = e.clientX
@@ -92,29 +95,22 @@ class PannableContainer extends HTMLElement {
 
     window.addEventListener('pointerup', this._onPointerUp)
     window.addEventListener('pointercancel', this._onPointerUp)
-    window.addEventListener('pointermove', this._onPointerMove, {
-      passive: false
-    })
+    window.addEventListener('pointermove', this._onPointerMove)
   }
 
   _onPointerUp = e => {
     this._maybeDragging = false
     this._activePointerId = null
+    this.$viewport.releasePointerCapture?.(e.pointerId)
 
-    if (this._dragging) {
-      this._stopDragging(e.pointerId)
-    }
-  }
-
-  _stopDragging (pointerId) {
-    this._dragging = false
-
-    this.$viewport.releasePointerCapture?.(pointerId)
     window.removeEventListener('pointermove', this._onPointerMove)
     window.removeEventListener('pointerup', this._onPointerUp)
     window.removeEventListener('pointercancel', this._onPointerUp)
 
-    this._supressSyntheticClick()
+    if (!this._dragging) return
+
+    this._dragging = false
+    this._suppressNextClick = true
 
     if (this._frameRequested) {
       this._flushFrame()
@@ -124,6 +120,8 @@ class PannableContainer extends HTMLElement {
   }
 
   _onPointerMove = e => {
+    if (!this._isValidPointerEvent(e)) return
+
     if (!this._dragging) {
       if (!this._maybeDragging) return
       if (!this._sufficientDistance(e)) return
@@ -132,6 +130,16 @@ class PannableContainer extends HTMLElement {
     }
 
     this._drag(e)
+  }
+
+  _isLeftButtonEvent (e) {
+    return (e.buttons & 1) === 1
+  }
+
+  _isValidPointerEvent (e) {
+    return (
+      this._activePointerId !== null && e.pointerId === this._activePointerId
+    )
   }
 
   _sufficientDistance (e) {
@@ -164,7 +172,7 @@ class PannableContainer extends HTMLElement {
 
     if (!this._frameRequested) {
       this._frameRequested = true
-      requestAnimationFrame(() => this._flushFrame())
+      this._rafId = requestAnimationFrame(() => this._flushFrame())
     }
   }
 
@@ -174,6 +182,8 @@ class PannableContainer extends HTMLElement {
   }
 
   _cancelFrame () {
+    cancelAnimationFrame(this._rafId)
+    this._rafId = null
     this._frameRequested = false
   }
 
@@ -218,17 +228,11 @@ class PannableContainer extends HTMLElement {
     }
   }
 
-  _supressSyntheticClick () {
-    this._suppressNextClick = true
-    setTimeout(() => {
-      this._suppressNextClick = false
-    }, 0)
-  }
-
   _onClickCapture = e => {
     if (this._suppressNextClick) {
       e.stopImmediatePropagation()
       e.preventDefault()
+      this._suppressNextClick = false
     }
   }
 
