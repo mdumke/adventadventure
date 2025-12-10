@@ -55,6 +55,7 @@
 - [x] ambience is back on after re-focus, even if off before
 - [x] ipad cannot pan vertically!
 - [x] snow flakes faster when dragging (introduce dt)
+- [x] move witch behind the snow
 - [ ] ambience sound plays over video after tab refocus
 - [ ] full screen exited after refocus, but wrong icon
 

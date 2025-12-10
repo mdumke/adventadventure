@@ -160,7 +160,7 @@ snow-overlay {
     position: absolute;
     left: 1195px;
     top: 255px;
-    z-index: 2;
+    z-index: 1;
     user-select: none;
     pointer-events: none;
     animation: angel-bob 2s linear infinite;
