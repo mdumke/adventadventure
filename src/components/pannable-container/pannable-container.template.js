@@ -1,4 +1,4 @@
-import * as css from 'bundle-text:./panning-container.css'
+import * as css from 'bundle-text:./pannable-container.css'
 
 export const template = document.createElement('template')
 

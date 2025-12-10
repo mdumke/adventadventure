@@ -3,17 +3,17 @@
  *
  */
 
-import { template } from './panning-container.template'
+import { template } from './pannable-container.template.js'
 
 /**
- * @element panning-container
+ * @element pannable-container
  * @summary Container web component that allows panning of its content area.
  *
  * @fires pan-start - Fired when a pan operation starts.
  * @fires pan-update - Fired when the pan position is updated.
  * @fires pan-end - Fired when a pan operation ends.
  */
-class PanningContainer extends HTMLElement {
+class PannableContainer extends HTMLElement {
   constructor () {
     super()
     this.attachShadow({ mode: 'open' })
@@ -256,6 +256,6 @@ class PanningContainer extends HTMLElement {
   }
 }
 
-if (!customElements.get('panning-container')) {
-  customElements.define('panning-container', PanningContainer)
+if (!customElements.get('pannable-container')) {
+  customElements.define('pannable-container', PannableContainer)
 }
