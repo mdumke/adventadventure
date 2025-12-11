@@ -16,14 +16,12 @@ export class SnowCanvas {
     this.running = false
     this.animate = this.animate.bind(this)
     this.config = { ...SnowCanvas.DEFAULT_CONFIG, ...config }
-    this._lastTime = null
   }
 
   start (count) {
     this.initSnowflakes(count)
     if (!this.running) {
       this.running = true
-      this._lastTime = null
       this.animate()
     }
   }
@@ -61,13 +59,8 @@ export class SnowCanvas {
     }
   }
 
-  animate (time) {
+  animate () {
     if (!this.running) return
-
-    const t = time || performance.now()
-    const dt = this._lastTime === null ? 0 : t - this._lastTime
-    const frameScale = dt / (1000 / 60)
-    this._lastTime = t
 
     const { ctx, $canvas } = this
     ctx.clearRect(0, 0, $canvas.width, $canvas.height)
@@ -75,12 +68,13 @@ export class SnowCanvas {
     for (const flake of this.snowflakes) {
       this.drawFlake(flake)
 
-      flake.y += flake.speed * frameScale
-      flake.x += flake.xSpeed * Math.sin(flake.xOffset) * frameScale
+      flake.y += flake.speed
+
+      // drifting: gentle wave motion
+      flake.x += flake.xSpeed * Math.sin(flake.xOffset)
       flake.xOffset +=
-        (this.config.driftPhaseIncrement.base +
-          flake.depth * this.config.driftPhaseIncrement.factor) *
-        frameScale
+        this.config.driftPhaseIncrement.base +
+        flake.depth * this.config.driftPhaseIncrement.factor
 
       if (flake.y > $canvas.height) {
         flake.y = -flake.radius
