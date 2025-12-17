@@ -340,7 +340,7 @@
         "width": 100,
         "height": 125
       },
-      "packageId": "burnside"
+      "packageId": "dalla"
     },
     {
       "id": "door-24",
@@ -457,6 +457,10 @@
     "joshua": {
       "thumbnail": "packages/joshua.webp",
       "src": "https://www.youtube-nocookie.com/embed/PS9Bc_GQBEs?si=0IEGlI25MsMwEwGw"
+    },
+    "dalla": {
+      "thumbnail": "packages/dalla.webp",
+      "src": "https://www.youtube-nocookie.com/embed/kFfhBX7ET-4?si=OGOZLQmvcSEGuSxX"
     }
   },
   "audio": [
